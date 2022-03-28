@@ -35,6 +35,6 @@ class PowerGenerator extends Generator
         }
         multi = multi.mul(game.alephLayer.upgrades.powerGenerators.apply());
         const power = game.restackLayer.permUpgrades.powerGenerators.apply();
-        return Decimal.pow(2, Decimal.floor(this.bought.div(10))).mul(multi).pow(power);
+        return Decimal.pow(4, Decimal.floor(this.bought.div(10))).mul(multi).pow(power);
     }
 }

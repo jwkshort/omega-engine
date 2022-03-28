@@ -44,7 +44,7 @@ class Generator
             }
         }
         //individual generator boosts and multi boost
-        let f = new Decimal(3);
+        let f = new Decimal(4);
         for(const l of game.layers)
         {
             for(const upg of l.getAllUpgrades().filter(upg => (upg.type === UPGRADE_GENERATOR && upg.cfg.generators.includes(this.id)) || upg.type === UPGRADE_GENERATOR_TIMELAYER))

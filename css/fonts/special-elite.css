@@ -1,0 +1,8 @@
+@font-face{
+    font-family: special-elite;
+    src: url('../../fonts/SpecialElite-Regular.ttf');
+}
+
+:root{
+    --primary-font: special-elite
+}

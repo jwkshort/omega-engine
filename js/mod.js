@@ -1,6 +1,6 @@
 var mod = {
-    primaryName: "ω",
-    secondaryName: "Engine",
+    primaryName: "Ω",
+    secondaryName: "- L λ γ e r s EZ",
     version: "1.0.0",
     engineVer: "0.2.2 P2", //DO NOT MODIFY
     debugMode: true,
@@ -37,6 +37,12 @@ var mod = {
             "01",
             "2345"
         ]],
+        ["Unary (Jeehan's meme names)",
+        [
+            '1',
+            "1",
+            "2345"
+        ]],
         ["Random",
         [
             Utils.createRandomWord(10, new Random(Date.now()).nextInt()),
@@ -51,6 +57,7 @@ var mod = {
         ["Roboto", "css/fonts/roboto.css"],
         ["Comfortaa", "css/fonts/comfortaa.css"],
         ["Minecraft", "css/fonts/minecraft.css"],
+        ["Special Elite", "css/fonts/special-elite.css"],
     ],
     saves: [
         ["Save 1", ""],

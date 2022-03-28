@@ -15,10 +15,8 @@ class AlephLayer
                 level => new Decimal(1e6).pow(Decimal.pow(1.5, level)),
                 level => new Decimal(1).add(Decimal.max(0, game.alephLayer.aleph).add(1).log10().mul(level).mul(0.05)).pow(2.5)),
             deltaBoost: new AlephUpgrade("Gain more &delta;",
-                level => Decimal.pow(1e5, level).mul(1e3),
-                level => Decimal.pow(10, level), {
-                    maxLevel: 4
-                }),
+                level => Decimal.pow(8e4, level).mul(Decimal.pow(1.25, Decimal.pow(level, 1.25))).mul(1e3),
+                level => Decimal.pow(10, level)),
             powerGenerators: new AlephUpgrade("All Power Generators on every Layer are stronger",
                 level => Utils.createValueDilation(Decimal.pow(1e5, Decimal.pow(level, 1.5)).mul(1e20), 0.001),
                 level => Decimal.pow(1.5, level)),
@@ -31,10 +29,9 @@ class AlephLayer
                 level => Utils.createValueDilation(Decimal.pow(1e30, level).mul(1e100), 0.01),
                 level => game.layers[0] ? Decimal.pow(new Decimal(1.1).add(level.mul(0.1)), Decimal.max(0, game.layers[0].resource).add(1).log10().add(1).log10()) : new Decimal(1)),
             betterBetaFormula: new AlephUpgrade("The &beta; Prestige Formula is better",
-                level => new Decimal(1e90),
-                level => new Decimal(1).add(level.mul(0.12)), {
-                    maxLevel: 1,
-                    getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
+                level => new Decimal(1e120).pow(level.mul(0.05).mul(level.add(1).ln().add(1)).add(1).mul(level.div(100).add(1))),
+                level => new Decimal(1).add(level.add(1).log(2).mul(1.1).pow(level.pow(0.01)).mul(0.06)), {
+                    getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")
                 }),
             prestigeRewards: new AlephUpgrade("Increase the Prestige Reward of all Layers",
                 level => Utils.createValueDilation(Decimal.pow(1e30, level).mul(1e100), 0.005, new Decimal("1e650")),
