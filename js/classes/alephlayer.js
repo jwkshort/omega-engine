@@ -62,7 +62,7 @@ class AlephLayer
     {
         if(functions.maxLayerUnlocked() < 3) return new Decimal(0);
         if(game.layers[3].timesReset === 0) return new Decimal(0);
-        return Decimal.pow(10, Math.max(0, functions.maxLayerUnlocked() - 3)).mul(functions.maxLayerUnlocked() - 3);
+        return Decimal.pow(10, Math.max(0, functions.maxLayerUnlocked() - 3)).mul(functions.maxLayerUnlocked() - 2);
     }
 
     maxAll()
