@@ -21,10 +21,8 @@ class AlephLayer
                 level => Utils.createValueDilation(Decimal.pow(1e5, Decimal.pow(level, 1.5)).mul(1e20), 0.001),
                 level => Decimal.pow(1.5, level)),
             prestigeNoPowerBoost: new AlephUpgrade("Increase Prestige Reward on all Layers that don't have Power Generators",
-                level => Decimal.pow(1e8, level).mul(1e22),
-                level => Decimal.pow(2, level), {
-                    maxLevel: 3
-                }),
+                level => Utils.createValueDilation(Decimal.pow(5e7, level).mul(Decimal.pow(2, Decimal.pow(level, 1.25))).mul(1e22), 0.0125),
+                level => Decimal.pow(2, level)),
             alephBoost2: new AlephUpgrade("Gain more aleph based on the log(log(&alpha;)) you have",
                 level => Utils.createValueDilation(Decimal.pow(1e30, level).mul(1e100), 0.01),
                 level => game.layers[0] ? Decimal.pow(new Decimal(1.1).add(level.mul(0.1)), Decimal.max(0, game.layers[0].resource).add(1).log10().add(1).log10()) : new Decimal(1)),
