@@ -28,7 +28,7 @@ class AlephLayer
                 level => game.layers[0] ? Decimal.pow(new Decimal(1.1).add(level.mul(0.1)), Decimal.max(0, game.layers[0].resource).add(1).log10().add(1).log10()) : new Decimal(1)),
             betterBetaFormula: new AlephUpgrade("The &beta; Prestige Formula is better",
                 level => new Decimal(1e120).pow(level.mul(0.05).mul(level.add(1).ln().add(1)).add(1).mul(level.div(100).add(1))),
-                level => new Decimal(1).add(level.add(1).log(2).mul(Decimal.add(1.1,level.mul(0.01))).pow(level.pow(0.01)).mul(0.06)), {
+                level => new Decimal(1).add(level.add(1).log(2).mul(Decimal.add(1.1,level.pow(0.75).mul(0.01))).pow(level.pow(0.01)).mul(0.06)), {
                     getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")
                 }),
             prestigeRewards: new AlephUpgrade("Increase the Prestige Reward of all Layers",
