@@ -46,11 +46,11 @@ function tickGame(seconds)
             titleInfo = Utils.getMOTD();
             break;
         case 2:
-            titleInfo = "Layer "
+            titleInfo = "layer "
             titleInfo += game.metaLayer.active ? functions.formatNumber(game.metaLayer.layer.add(1), 3, 0) : new Decimal(1).add(game.highestLayer);
             break;
     }
-    document.title = "ωEngine" + (game.settings.titleStyle !== 0 ? ":" : "") + " " + titleInfo;
+    document.title = "ඞ2-lλγers" + (game.settings.titleStyle !== 0 ? ": " : "") + titleInfo;
 
     if(saveTimer > 30)
     {

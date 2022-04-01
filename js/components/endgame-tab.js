@@ -10,8 +10,8 @@ Vue.component("endgame-tab", {
         hardResetGame: () => functions.hardResetGame(),
     },
     template: `<div id="endgame">
-    <h2><span class="omega">You</span> Win!</h2>
-    <p>You beat the game in <span class="omega">{{timeSpent}}</span><br>
-    <button onclick="game.settings.tab = 'Layers'">Continue</button> <button @click="hardResetGame()">Wipe Game</button></p>
+    <h2><span class="omega">wow</span> cool</h2>
+    <p>you now have a degree in <b><i>sus</i></b> and you got it in <span class="omega"><b>{{timeSpent}}</b></span><br>
+    <button onclick="game.settings.tab = 'Layers'">continue gaming</button> <button @click="hardResetGame()">die</button></p>
 </div>`
 })

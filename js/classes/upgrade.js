@@ -1,7 +1,7 @@
 const UPGRADE_RESOURCE = 0, UPGRADE_GENERATOR = 1, UPGRADE_GENMULTI = 2, UPGRADE_POWERGENERATOR = 3, UPGRADE_PRESTIGEREWARD = 4,
     UPGRADE_RESOURCE_TIMELAYER = 5, UPGRADE_GENERATOR_TIMELAYER = 6, UPGRADE_POWERGENERATOR_TIMELAYER = 7;
 
-const RESOURCE_ALEPH = 0, RESOURCE_LAYERCOINS = 1
+const RESOURCE_ALEPH = 0, RESOURCE_LAYERCOINS = 1, RESOURCE_SABOTAGE = 2
 
 class AbstractUpgrade
 {
@@ -318,6 +318,14 @@ class AlephUpgrade extends ResourceUpgrade
     constructor(description, getPrice, getEffect, cfg)
     {
         super(description, getPrice, getEffect, RESOURCE_ALEPH, cfg);
+    }
+}
+
+class sabotageUpgrade extends ResourceUpgrade
+{
+    constructor(description, getPrice, getEffect, cfg)
+    {
+        super(description, getPrice, getEffect, RESOURCE_SABOTAGE, cfg);
     }
 }
 

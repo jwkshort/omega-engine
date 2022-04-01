@@ -1,43 +1,59 @@
 var mod = {
-    primaryName: "ω",
-    secondaryName: "Engine",
-    version: "1.0.0",
+    primaryName: "ඞ<sup>2</sup>",
+    secondaryName: "-lλγers",
+    version: "1.0.0 Preview",
     engineVer: "0.2.2 P2", //DO NOT MODIFY
     debugMode: true,
     themes: [
-        ["Dark", "css/themes/dark.css"],
-        ["Light (Legacy)", "https://veprogames.github.io/omega-layers/css/main.css"],
-        ["Neon", "css/themes/neon.css"],
-        ["Godot Blue", "css/themes/darkblue.css"],
-        ["Halloween", "css/themes/spooky.css"],
-        ["eXPerience", "css/themes/experience.css"]
+        ["sussy", "css/themes/sussy.css"],
+        ["purply", "css/themes/purply.css"],
+        ["hacky", "css/themes/hacky.css"],
+        ["bad", "css/themes/bad.css"],
+        ["dark", "css/themes/dark.css"],
+        ["broken light", "https://veprogames.github.io/omega-layers/css/main.css"],
+        ["neon", "css/themes/neon.css"],
+        ["idk blue", "css/themes/darkblue.css"],
+        ["halloween", "css/themes/spooky.css"],
+        ["my pc", "css/themes/experience.css"]
     ],
     layerNames: [
-        ["Ω-Lλγers",
+        ["sussy names",
+        [
+            ["<sub><sub>ඞ</sub></sub>", "<sub>ඞ</sub>", "<sup>ඞ</sup>", "<sup><sup>ඞ</sup></sup>", "ඞ"],
+            "<÷-=+×>",
+            ["<span class='flipped-v'>ඞ</span>", "<span class='flipped-v'>ඞ</span><sub>ඞ</sub>", "<span class='flipped-v'>ඞ</span><sub><span class='flipped-v'>ඞ</span></sub>", "<span class='flipped-v'>ඞ<sub>ඞ</sub></span>"]
+        ]],
+        ["legacy sus names",
+        [
+            ["○","☛","🔫","🗡","ඞ"],
+            "</-=+x>",
+            ["<span class='flipped-v'>ඞ</span>", "α","β", "γ"]
+        ]],
+        ["omega names",
         [
             "αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ",
             "ψϝϛͱϻϙͳϸ",
             ["Ʊ", "Ʊ<sup>2</sup>","Ʊ<sup>3</sup>","Ʊ<sup>2<sup>2</sup></sup>"]
         ]],
-        ["Alphabet",
+        ["some letters",
         [
             "abcdefghijklmnopqrstuvwxyz",
             "123456789",
             "ABCD"
         ]],
-        ["Symbols",
+        ["idk what they are",
         [
             '!"£$%^&*;:@',
             "<,[{}].>",
             "+×÷^"
         ]],
-        ["Binary",
+        ["2 numbers",
         [
             '01',
             "01",
             "2345"
         ]],
-        ["Random",
+        ["crazy",
         [
             Utils.createRandomWord(10, new Random(Date.now()).nextInt()),
             Utils.createRandomWord(10, new Random(Math.floor(Date.now()/2)).nextInt()),
@@ -45,18 +61,18 @@ var mod = {
         ]]
     ],
     fonts: [
-        ["Monospace Typewriter", "css/fonts/typespace.css"],
-        ["Comic Sans", "css/fonts/comic.css"],
-        ["Arial", "css/fonts/arial.css"],
-        ["Roboto", "css/fonts/roboto.css"],
-        ["Comfortaa", "css/fonts/comfortaa.css"],
-        ["Minecraft", "css/fonts/minecraft.css"],
+        ["snas", "css/fonts/comic.css"],
+        ["mono", "css/fonts/typespace.css"],
+        ["airial", "css/fonts/arial.css"],
+        ["robot", "css/fonts/roboto.css"],
+        ["comfy", "css/fonts/comfortaa.css"],
+        ["minceraft", "css/fonts/minecraft.css"],
     ],
     saves: [
-        ["Save 1", ""],
-        ["Save 2", "2"],
-        ["Save 3", "3"],
-        ["Save 4", "4"],
+        ["crewmate save", ""],
+        ["impostor save", "2"],
+        ["ghost save", "3"],
+        ["sheriff save", "4"],
     ],
     debugClasses: []
 }
