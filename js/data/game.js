@@ -96,7 +96,7 @@ const game = {
         new Achievement("Endgame", "Reach layer 1.8e308 and finish Omega Layers EZ", "Ʊ", () => game.metaLayer.layer.gte(Infinities[0])),
     ],
     secretAchievements: [
-        new Achievement("Meta sucks!", "Reach Layer 144 without meta", "<img alt=\"LC\" class=\"inline\" src=\"images/layercoin.svg\"/>", () => game.highestLayer >= 143 && !game.metaLayer.active),
+        new Achievement("Meta sucks!", "Reach Layer 96 without meta", "<img alt=\"LC\" class=\"inline\" src=\"images/layercoin.svg\"/>", () => game.highestLayer >= 95 && !game.metaLayer.active),
         new Achievement("Volatility sucks!", "Get &epsilon; without volatiling any layer", "<img alt=\"LC\" class=\"inline\" src=\"images/save.svg\"/>", () => (functions.maxLayerUnlocked()) >= 4 && game.volatility.layerVolatility.level.eq(0)),
     ],
     alephLayer: new AlephLayer(),
