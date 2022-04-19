@@ -3,19 +3,20 @@ Vue.component("news-ticker", {
     {
         return {
             messages: [
+                "I found Mcdonald's IP adress it's 154.136.79.119",
                 "Skill issue",
                 "Skill tissue - JeehanMoment",
                 "JeehanMoment more like JeehanModder",
                 "how should i share my mod - JeehanMoment",
                 "1 and l look the same in special e1ite fight me",
-                "bugs report: second achievements doesn't work properly",
+                "bugs report: restack achievements doesn't work properly",
                 "Imagine you see this news ticker",
                 "I really like this mod every time i see my ee69.42 alfuh it makes me happy 10/10 please support JeehanMoment! Next time I'm gonna rate The Numbruh Tree.",
                 "I really like the numbruh tree that made by JeehanMoment im actually impressed because i don't how he perfectly balance that game like most upgrades doesn't make sense so im confused anyways next time I'm gonna rate OLEZ",
                 "abusing omega engine™",
                 "*codes cutely*",
-                "You commiting 69 commits per second-",
-                "what candeice - JeehanMoment",
+                "You committing 69 commits per second-",
+                "what cand<strike>e</strike>ice - JeehanMoment",
                 "Why doesn't anyone play my mod i spent 3 days to make all of this alone without any help welp ig omega engine's help",
                 "Yee",
                 "un-omega your layers",
@@ -42,8 +43,8 @@ Vue.component("news-ticker", {
                 "ඞ",
                 "this is the worst news ticker",
                 "<a href='https://jwklong.github.io/Incremental-Snake'>click to play jwklong's incremental snek game</a>",
-                "<a href='https://jeehan2561.github.io/The-Numbruh-Tree/'>click to play the numbruh tree</a>",
-                "<a href='https://discord.gg/4mPMTVJGf3'>Jeehan's Discord Server</a>",
+                "<a href='https://raw.githack.com/jeehan2561/The-Modding-Tree/master/index.html'>click to play the numbruh tree</a>",
+                "<a href='https://discord.gg/ccbBZHYsTv'>Jeehan's Discord Server</a>",
                 "ζ is Fake News!",
                 "<a href='https://www.youtube.com/watch?v=Tt7bzxurJ1I'>click to get a rickroll (real!)</a>",
                 "ew sticker",
@@ -139,7 +140,8 @@ Vue.component("news-ticker", {
                 () => "This Number is randomly generated -> " + Math.pow(10, Math.random() * 6.01).toFixed(2) +
                     ". If it's above 1 000 000, consider yourself lucky!",
                     () => functions.formatNumber(game.metaLayer.active ? game.metaLayer.getApproxAlpha() : game.layers[0].resource, 2, 0, 1e9) + " α? That's just a rookie number",
-                    () => "Motto of the Day: " + Utils.getMOTD()
+                    () => "Motto of the Day: " + Utils.getMOTD(),
+                    () => "I have your IP adress it's " + (Math.random() * 255).toFixed(0) + "." + (Math.random() * 255).toFixed(0) + "." + (Math.random() * 255).toFixed(0) + "." + (Math.random() * 255).toFixed(0) + " =)"
             ],
             currentMessage: "",
             messageIndex: -1

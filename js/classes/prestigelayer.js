@@ -575,7 +575,7 @@ class PrestigeLayer
         {
             multi = multi.mul(game.alephLayer.upgrades.prestigeNoPowerBoost.apply());
         }
-        multi = multi.mul(game.alephLayer.upgrades.prestigeRewards.apply());
+        multi = multi.mul(game.alephLayer.upgrades.prestigeRewards.apply())
         multi = multi.mul(game.restackLayer.permUpgrades.prestigeGains.apply());
         let power = game.currentChallenge && game.currentChallenge.effectType === CHALLENGE_EFFECT_PRESTIGEREWARD ? game.currentChallenge.applyEffect() : 1;
         if(this.layer === 0) //better beta
@@ -729,7 +729,7 @@ class PrestigeLayer
         }
         if(this.isNonVolatile() && game.layers[this.layer + 1])
         {
-            game.layers[this.layer + 1].addResource(this.getPrestigeAmountPerSecond().mul(dt));
+            game.layers[this.layer + 1].addResource(this.getPrestigeAmountPerSecond().mul(dt))
         }
         if(game.settings.autoMaxAll && this.isAutoMaxed())
         {
