@@ -16,7 +16,7 @@ class AlephLayer
                 level => new Decimal(1).add(Decimal.max(0, game.alephLayer.aleph).add(1).log10().mul(level.add(1)).mul(0.05)).pow(2.5)),
             deltaBoost: new AlephUpgrade("Gain more &delta;",
                 level => Decimal.pow(8e4, level).mul(Decimal.pow(1.25, Decimal.pow(level, 1.25))).mul(1e3),
-                level => Decimal.pow(10, Decimal.add(level, 1).pow(1.6))).mul(Decimal.pow(level.add(1), 1.2)).div(10),
+                level => Decimal.pow(10, Decimal.add(level, 1).pow(1.6)).mul(Decimal.pow(level.add(1), 1.2)).mul(0.1),),
             powerGenerators: new AlephUpgrade("All Power Generators on every Layer are stronger",
                 level => Utils.createValueDilation(Decimal.pow(1e5, Decimal.pow(level, 1.5)).mul(1e20), 0.001),
                 level => Decimal.pow(1.5, level)),
