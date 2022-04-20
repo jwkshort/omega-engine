@@ -30,7 +30,7 @@ Vue.component("news-ticker", {
                 "Ah yes my favourite thing to do modding a gaem",
                 "Check out The Numbruh Tree or i'll steal your stuffs",
                 "This mod isn't unbalanced you're just stu-",
-                "My favourite shortcuts are CRTL+V, CRT+C and shortcut to ur mo-",
+                "My favourite shortcuts are CRTL+V, CRTL+C and shortcut to ur mo-",
                 "I'm still stuck at Layer 69 - JeehanMoment",
                 "Hi chat",
                 "WAOW",

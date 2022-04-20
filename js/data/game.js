@@ -163,7 +163,7 @@ const game = {
     ],
     secretAchievements: [
         new Achievement("Meta sucks!", "Reach Layer 96 without going meta", "<img alt=\"LC\" class=\"inline\" src=\"images/layercoin.svg\"/>", () => game.highestLayer >= 95 && !game.metaLayer.active),
-        new Achievement("Volatility sucks!", "Get &epsilon; without volatiling any layer", "<img alt=\"LC\" class=\"inline\" src=\"images/save.svg\"/>", () => (functions.maxLayerUnlocked()) >= 4 && game.volatility.layerVolatility.level.eq(0)),
+        new Achievement("Volatility sucks!", "Get &epsilon; without non-volatiling any layer", "<img alt=\"LC\" class=\"inline\" src=\"images/save.svg\"/>", () => (functions.maxLayerUnlocked()) >= 4 && game.volatility.layerVolatility.level.eq(0)),
         new Achievement("Should we tell them to stop? I", "Buy 10,000 Meta Upgrades", "<img alt=\"LC\" class=\"inline\" src=\"images/layercoin.svg\"/>", () => game.restackLayer.metaUpgrade.level.gte(10000))
     ],
     alephLayer: new AlephLayer(),
