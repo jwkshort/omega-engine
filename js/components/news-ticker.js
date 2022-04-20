@@ -63,7 +63,7 @@ Vue.component("news-ticker", {
                 "Wut",
                 "Nu",
                 "@everyone",
-                "sussy news",
+                "unsussy news",
                 "Woah crazy",
                 "Every Incremental needs a News Ticker",
                 "Hi YT",
