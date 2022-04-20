@@ -91,7 +91,7 @@ Vue.component("news-ticker", {
                 "Suggest more messages in the Discord!",
                 "Join my discord server Join my discord server Join my discord server Join my discord server Join my discord server Join my discord server Join my discord server Join my discord server Join my discord server Join my discord server Join my discord server Join my discord server Join my discord server Join my discord server Join m- *muted*",
                 "new sticker",
-                "e - βσηκ_μ",
+                "e - βσηκ",
                 "(hardcapped)",
                 "the symbol is too small!",
                 "(softcapped)",
