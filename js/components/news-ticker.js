@@ -101,7 +101,6 @@ Vue.component("news-ticker", {
                 "\"if you hit a wall, keep hitting\" -winston churchill",
                 "(hardcapped)",
                 "XD you just got (softcapped)",
-                "XD you just got (softcapped)",
                 "(╯°□°）╯︵ ┻━┻   -   TableFlipper07",
                 Utils.createRandomWord(175) + " sorry i steal code from jwklong",
                 Utils.createRandomWord(175) + " sorry i steal code from the sus gaem",
