@@ -3,6 +3,18 @@ Vue.component("news-ticker", {
     {
         return {
             messages: [
+                "ν v",
+                "me when the me when uh i me virus me sus when impasta if the i forgor 💀",
+                "i rember ッ",
+                "i forgor 💀",
+                "toxic >:/",
+                "when new stickb- oh wait wrong mod",
+                "when news tick- oh wait wrong mod",
+                "eg",
+                "i",
+                "guys",
+                "agua",
+                "Omega Layers EX aka Omega Layers but you having skill issue",
                 "I found Mcdonald's IP adress it's 154.136.79.119",
                 "Skill issue",
                 "Skill tissue - JeehanMoment",
@@ -46,7 +58,17 @@ Vue.component("news-ticker", {
                 "<a href='https://raw.githack.com/jeehan2561/The-Modding-Tree/master/index.html'>click to play the numbruh tree</a>",
                 "<a href='https://discord.gg/ccbBZHYsTv'>Jeehan's Discord Server</a>",
                 "ζ is Fake News!",
-                "<a href='https://www.youtube.com/watch?v=Tt7bzxurJ1I'>click to get a rickroll (real!)</a>",
+                "<a href='https://www.youtube.com/watch?v=lEuvYJQ5vog'>how to beat any mario game in 5 hours (real!)</a>",
+                "<a href='https://www.youtube.com/shorts/NTvXsdww_rk'>roblox ads be like</a>",
+                "<a href='https://www.youtube.com/watch?v=dpMnWv8blRo'>how to drive a car easily (real!)</a>",
+                "<a href='https://www.youtube.com/watch?v=ij9MkbMSSUk'>how to eat an egg (real!)</a>",
+                "<a href='https://www.youtube.com/watch?v=LrL8_b3LZLM'>click to see someone that dead (real!)</a>",
+                "<a href='https://www.youtube.com/watch?v=j9V78UbdzWI'>click to eat reese's puffs (real!)</a>",
+                "<a href='https://www.youtube.com/watch?v=mNkyhYAwUQg'>click to see snas (real!)</a>",
+                "<a href='https://www.youtube.com/watch?v=gub9x8fP6yw'>click to hear epic tune (real!)</a>",
+                "<a href='https://www.youtube.com/watch?v=Tt7bzxurJ1I'>click to get a rickrolled (real!)</a>",
+                "<a href='https://www.youtube.com/watch?v=JRHARtLZLk8'>click to get a stickbugged (real!)</a>",
+                "<a href='https://www.youtube.com/watch?v=RvBwypGUkPo'>click to get a coconut malled (real!)</a>",
                 "ew sticker",
                 "im using break_eternity.js",
                 "im using break_eternity.sb3",
@@ -125,6 +147,7 @@ Vue.component("news-ticker", {
                 "i need monkey but the k is silent",
                 "Powered by RNG",
                 "i ran out of words on my hard drive :(",
+                () => "is that " + "αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ"[(Math.random() * 48).toFixed(0)] + "from omega layers?",
                 () =>
                 {
                     let res = "";
