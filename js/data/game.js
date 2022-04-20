@@ -121,7 +121,6 @@ const game = {
         new Achievement("The True Time", "Go &gamma; 42 Times", "&gamma;", () => game.layers[2] && game.layers[2].timesReset >= 42),
         new Achievement("More Gamma, more Boost", "Gain 1,000,000 &gamma;", "&gamma;", () => game.layers[2] && game.layers[2].resource.gte(1e6)),
         new Achievement("Huge Number", "Gain 1.00e100,000 &alpha;", "&alpha;", () => game.layers[1] && game.layers[0].resource.gte("1e100000")),
-        new Achievement("How Challenging", "Beat Challenge &gamma;-01 at least once", "&gamma;", () => game.layers[2] && game.layers[2].challenges[0].level > 0),
         new Achievement("Persistence", "Make Layer &alpha; Non-Volatile", '<img src="images/save.svg" alt="S">', () => game.volatility.layerVolatility.level.gt(0)),
         new Achievement("Other Times Await... Yet Again", "Go &delta;", "&delta;", () => game.layers[3] && game.layers[3].timesReset > 0),
         new Achievement("Aleph-0", "Reach 1,000 &#8501;", '<span class="aleph">&#8501;<sub>0</sub></span>', () => game.alephLayer.aleph.gte(1000)),
