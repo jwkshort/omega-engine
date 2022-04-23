@@ -96,12 +96,13 @@ class MetaLayer
     {
         return game.restackLayer.upgradeTreeNames.resourceMultiplierUpgrades.apply()
             .mul(game.restackLayer.upgradeTreeNames.resourceMultiplierUpgradesTime.apply())
+            .mul(game.restackLayer.upgradeTreeNames.resourceMultiplierUpgrades2.apply())
             .mul(game.restackLayer.upgradeTreeNames.resourceMultiplierUpgrades2.apply());
     }
 
     getResourcePowererBoost()
     {
-        return game.restackLayer.upgradeTreeNames.resourcePowerersUpgrades.apply();
+        return game.restackLayer.upgradeTreeNames.resourcePowerersUpgrades.apply().mul(game.restackLayer.upgradeTreeNames.resourceMultiplierUpgrades2.apply());
     }
 
     getApproxAlpha()
