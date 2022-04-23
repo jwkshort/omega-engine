@@ -147,7 +147,7 @@ Vue.component("news-ticker", {
                 "i need monkey but the k is silent",
                 "Powered by RNG",
                 "i ran out of words on my hard drive :(",
-                () => "is that " + "αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ"[(Math.random() * 48).toFixed(0)] + "from omega layers?",
+                () => "is that " + "αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ"[(Math.random() * 48).toFixed(0)] + " from omega layers?",
                 () =>
                 {
                     let res = "";
