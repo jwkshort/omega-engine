@@ -499,6 +499,43 @@ p.resource-display > span:first-child{
     text-align: center;
 }
 
+/*Functions*/
+
+.functions{
+    font-weight: bold;
+    text-shadow: 0.07em 0 0.07em currentColor;
+}
+
+.functions-layer .boosts, .functions-layer .resource, .functions-layer .tabs{
+    text-align: center;
+}
+
+.functions-layer .boosts{
+    margin: 1rem 0;
+}
+
+.functions-layer .resource{
+    font-size: 120%;
+}
+
+.functions-layer .resource p:first-child{
+    font-size: 120%;
+}
+
+.functions-layer .upgrades{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.functions-layer .upgrades:last-child .upgrade{
+    width: 20%;
+}
+
+.functions-layer h3{
+    text-align: center;
+}
+
 /*Automator*/
 
 .automator-tab{

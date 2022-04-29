@@ -6,7 +6,8 @@ Vue.component("volatility-tab", {
         }
     },
     template: `<div class="volatility-tab">
-<p class="description">volatility has stuff to make u better at game i guess</p>
+<p class="description">Volatility (persistence) allows you to make earlier Layers non-volatile. Non-volatile Layers
+never reset and reward a percentage of the its prestige reward every second.</p>
 <div class="upgrades">
     <upgrade :upgrade="volatility.layerVolatility"></upgrade>
     <upgrade :upgrade="volatility.autoMaxAll"></upgrade>

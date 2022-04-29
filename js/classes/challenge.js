@@ -35,14 +35,14 @@ class Challenge
         switch (this.effectType)
         {
             case CHALLENGE_EFFECT_UPGRADESTRENGTH_SIMPLEBOOST:
-                return "All Upgrade and Simple Boost Effects are raised to the Power of " + this.applyEffect().toFixed(2);
+                return "All Upgrade and Simple Boost Effects are raised to the Power of " + this.applyEffect().toFixed(3);
             case CHALLENGE_EFFECT_PRICES_POWER:
-                return "All Generator and Upgrade Prices are raised to the Power of " + this.applyEffect().toFixed(2) + ". " +
-                    "Power Effects are raised to the Power of " + this.applyEffect().pow(-1).toFixed(2);
+                return "All Generator and Upgrade Prices are raised to the Power of " + this.applyEffect().toFixed(3) + ". " +
+                    "Power Effects are raised to the Power of " + this.applyEffect().pow(-1).toFixed(3);
             case CHALLENGE_EFFECT_GENMULTI:
-                return "All Generator Multipliers are raised to the Power of " + this.applyEffect().toFixed(2);
+                return "All Generator Multipliers are raised to the Power of " + this.applyEffect().toFixed(3);
             case CHALLENGE_EFFECT_PRESTIGEREWARD:
-                return "All Prestige Rewards are raised to the Power of " + this.applyEffect().toFixed(2);
+                return "All Prestige Rewards are raised to the Power of " + this.applyEffect().toFixed(3);
             default:
                 return "That's weird. Something's different..."
         }

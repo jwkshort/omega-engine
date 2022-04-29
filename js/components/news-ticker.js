@@ -89,7 +89,7 @@ Vue.component("news-ticker", {
                 "Woah crazy",
                 "Every Incremental needs a News Ticker",
                 "Hi YT",
-                "100 isn't alot >:c - JeehanMoment",
+                "100 isn't a lot >:c - JeehanMoment",
                 "n0",
                 "This is not meme generator",
                 "When",

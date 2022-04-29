@@ -78,6 +78,10 @@ function tickGame(seconds)
         {
             game.alephLayer.maxAll();
         }
+        if(game.settings.tab === "Functions")
+        {
+            game.functionsLayer.maxAll();
+        }
         else
         {
             game.currentLayer.maxAll();
@@ -128,6 +132,7 @@ function tickGame(seconds)
         }
     }
     game.alephLayer.tick(seconds);
+    game.functionsLayer.tick(seconds);
 
     for(const k of Object.keys(game.automators))
     {
@@ -238,6 +243,10 @@ onkeydown = e =>
         if(lc === "u" && !e.ctrlKey && game.highestLayer >= 1)
         {
             game.settings.tab = "Automators";
+        }
+        if(lc === "F" && !e.ctrlKey && game.highestLayer >= Infinity)
+        {
+            game.settings.tab = "Functions";
         }
     }
     else

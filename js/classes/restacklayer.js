@@ -96,7 +96,7 @@ class ReStackLayer
             ],
             [
                 new RestackLayerUpgrade("Your Layer gets substracted instead of reset when buying Upgrades",
-                    level => new Decimal("1e75000"),
+                    level => new Decimal("1e7500"),
                     level => level.gt(0), {
                         maxLevel: 1,
                         getEffectDisplay: function()
@@ -132,14 +132,15 @@ class ReStackLayer
             [
                 new RestackLayerUpgrade("Resource Powerers are stronger based on Layer coins",
                     level => new Decimal("1ee308").pow(Decimal.pow(1e20, level).mul(Decimal.pow(1e5, level.pow(1.25)))),
-                    level => new Decimal (1).add(Decimal.mul(game.restackLayer.layerCoins.add(1).log(10).add(1).log(10).add(1).ln().div(2.2), Decimal.max(0, level).pow(0.6))), {
-                        maxLevel: 5
+                    level => new Decimal (1).add(Decimal.mul(game.restackLayer.layerCoins.add(1).log(10).add(1).log(10).add(1).log(10).div(60), Decimal.max(0, level).pow(0.6))), {
+                        maxLevel: 5,
+                        getEffectDisplay: effectDisplayTemplates.numberStandard(3, "x")
                     }),
                 new RestackLayerUpgrade("Resource Multipliers are stronger based on Layer coins",
                     level => new Decimal("1ee308").pow(Decimal.pow(1e20, level).mul(Decimal.pow(1e5, level.pow(1.25)))),
-                    level => new Decimal (1).add(Decimal.mul(game.restackLayer.layerCoins.add(1).log(10).add(1).log(10).add(1).ln().div(2), Decimal.max(0, level).pow(0.6))), {
+                    level => new Decimal (1).add(Decimal.mul(game.restackLayer.layerCoins.add(1).log(10).add(1).log(10).add(1).log(10).div(80), Decimal.max(0, level).pow(0.6))), {
                         maxLevel: 5,
-                        getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
+                        getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")
                     }),
             ],
             [
@@ -177,8 +178,8 @@ class ReStackLayer
             resourcePowerersStrength: this.upgradeTree[5][0],
             resourceMultipliersLevelScaling: this.upgradeTree[5][1],
             noReset: this.upgradeTree[6][0],
-            resoucrcePowerersUpgrades2: this.upgradeTree[7][0],
-            resoucrceMultiplierUpgrades3: this.upgradeTree[7][1],
+            resourcePowerersStrength2: this.upgradeTree[7][0],
+            resourceMultiplierUpgrades3: this.upgradeTree[7][1],
             FunctionUnlock: this.upgradeTree[8][0]
         };
     }

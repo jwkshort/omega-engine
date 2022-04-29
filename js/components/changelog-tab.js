@@ -1,6 +1,11 @@
 Vue.component("changelog-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title>v1.3</template>
+    <template v-slot:text>- Add ? Secret Achievements. Total: ? Secret Achievements<br>- Add 2 Custom Names.<br>- Add a Prestige layer.<br>- Softcapped Layers gain past 1.8e308<br> - Edited Description, Icon, and Names<br> - Endgame: Layer 1e312<br> - New content coming soon...
+    </template>
+    </guide-item>
+    <guide-item>
     <template v-slot:title>v1.2</template>
     <template v-slot:text>- Add ? Secret Achievements. Total: ? Secret Achievements<br> - Nerfed Meta Upgrades by capping their levels at 5.<br> - New content coming soon...
     </template>

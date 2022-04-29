@@ -143,6 +143,10 @@ const functions = {
             {
                 return {aleph: "d" + value.aleph, upgrades: value.upgrades};
             }
+            if(value instanceof FunctionsLayer)
+            {
+                return {functions: "d" + value.functionsPoints, upgrades: value.upgrades};
+            }
             if(value instanceof Generator)
             {
                 return {amount: "d" + value.amount, bought: "d" + value.bought};

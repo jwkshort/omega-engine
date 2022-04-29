@@ -5,14 +5,14 @@
     <title>&omega;Engine</title>
     <link rel="icon" href="favicon.png"/>
 
-    <meta name="keywords" content="&omega;Engine"/>
-    <meta name="description" content="Modding Engine"/>
+    <meta name="keywords" content="Omega Layers EZ"/>
+    <meta name="description" content="A mod for Omega Layers made by JeehanMoment"/>
     <meta name="image" content="https:/jwklong.github.io/omega-engine/cover.png"/>
     <meta name="theme-color" content="#ffa600"/>
 
-    <meta name="og:title" content="&omega;Engine"/>
+    <meta name="og:title" content="Omega Layers EZ"/>
     <meta name="og:type" content="website"/>
-    <meta name="og:description" content="Modding Engine"/>
+    <meta name="og:description" content="A mod for Omega Layers made by JeehanMoment"/>
     <meta name="og:image" content="https:/jwklong.github.io/omega-engine/cover.png"/>
 
     <link rel="stylesheet" href="css/main.css"/>
@@ -39,6 +39,7 @@
                 <layer-locked-button v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Volatility'" :layerid="2"><img alt="V" class="inline" src="images/save.svg"/> Volatility</layer-locked-button>
                 <layer-locked-button v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Aleph'" :layerid="3"><span class="aleph">ℵ</span> Aleph</layer-locked-button>
                 <layer-locked-button v-if="isLayerCategory === 'Layers'" @click="settings.tab = 'ReStack'" :layerid="9"><img alt="R" class="inline" src="images/layercoin.png"/> ReStack</layer-locked-button>
+                <layer-locked-button v-if="isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Functions'" :layerid="1e308">ƒ Functions</layer-locked-button>
                 <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Changelog'"><img alt="C" class="inline" src="favicon.png"> Changelog</button>
                 <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Engine Changelog'"><img alt="EC" class="inline" src="https://jwklong.github.io/omega-engine/favicon.png"> Engine Changelog</button>
                 <button v-if="isLayerCategory === 'Achievements'" @click="settings.tab = 'Secret Achievements'"><img alt="Sa" class="inline" src="images/star.svg"> Secret Achievements</button>
@@ -61,6 +62,7 @@
         <automator-tab v-if="settings.tab === 'Automators'"></automator-tab>
         <aleph-layer v-if="settings.tab === 'Aleph'"></aleph-layer>
         <restack-tab v-if="settings.tab === 'ReStack'"></restack-tab>
+        <functions-layer v-if="settings.tab === 'Functions'"></functions-layer>
         <guide-tab v-if="settings.tab === 'Guide'"></guide-tab>
         <changelog-tab v-if="settings.tab === 'Changelog'"></changelog-tab>
         <engine-tab v-if="settings.tab === 'Engine Changelog'"></engine-tab>
@@ -72,7 +74,7 @@
             <a href="https://veprogames.github.io/omega-layers" target="_blank">Original Game</a>
             <a href="https://github.com/jwklong/omega-engine" target="_blank">Source Code</a>
             <a href="https://discord.link/engine" target="_blank">Community Server</a>
-            <a href="https://discord.gg/4mPMTVJGf3" target="_blank">Jeehan's Server (JeehanMoment's Modded Stuffs)</a>
+            <a href="https://discord.gg/ccbBZHYsTv" target="_blank">Jeehan's Server (JeehanMoment's Modded Stuffs)</a>
         </div>
     </footer>
 </div>
@@ -112,6 +114,7 @@
 <script src="js/classes/challenge.js"></script>
 <script src="js/classes/prestigelayer.js"></script>
 <script src="js/classes/alephlayer.js"></script>
+<script src="js/mods/functionsLayer.js"></script>
 <script src="js/classes/achievement.js"></script>
 <script src="js/classes/automator.js"></script>
 <script src="js/classes/restacklayer.js"></script>
@@ -127,6 +130,7 @@
 <script src="js/components/upgrade.js"></script>
 <script src="js/components/resource-upgrade.js"></script>
 <script src="js/components/aleph-upgrade.js"></script>
+<script src="js/mods/functions-upgrade.js"></script>
 <script src="js/components/restack-upgrade.js"></script>
 <script src="js/components/dynamic-upgrade.js"></script>
 <script src="js/components/upgrade-container.js"></script>
@@ -141,6 +145,7 @@
 <script src="js/components/settings-menu.js"></script>
 <script src="js/components/volatility-tab.js"></script>
 <script src="js/components/aleph-layer.js"></script>
+<script src="js/mods/functions-layer.js"></script>
 <script src="js/components/automator.js"></script>
 <script src="js/components/automator-tab.js"></script>
 <script src="js/components/restack-tab.js"></script>
@@ -165,7 +170,7 @@
 
 <script src="js/main.js"></script>
 <script>
-    var endgameReq = game.metaLayer.layer.gte(Infinities[0])
+    var endgameReq = game.metaLayer.layer.gte("1e312")
     setInterval(function() {
         if (endgameReq && !temp.endgameOverride) {
             game.settings.tab = "Endgame"
