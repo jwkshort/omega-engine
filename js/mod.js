@@ -8,7 +8,9 @@ var mod = {
         ["Dark", "css/themes/dark.css"],
         ["Light (Legacy)", "https://veprogames.github.io/omega-layers/css/main.css"],
         ["Neon", "css/themes/neon.css"],
-        ["Godot Blue", "css/themes/darkblue.css"],
+        ["Sapphire", "css/themes/sapphire.css"],
+        ["Emerald", "css/themes/emerald.css"],
+        ["Ruby", "css/themes/ruby.css"],
         ["Halloween", "css/themes/spooky.css"],
         ["eXPerience", "css/themes/experience.css"]
     ],
