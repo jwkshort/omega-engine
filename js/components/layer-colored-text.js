@@ -21,7 +21,7 @@ Vue.component("layer-colored-text", {
                 return "#ff00ff";
             }
             let h = 33 * Math.min(lid.toNumber(), 10000);
-            let s = Math.min(100, 10 * this.getLayerId());
+            let s = Math.min(100, this.getLayerId());
             if(lid.gt(10000))
             {
                 h += Decimal.log10(lid.div(10000)).toNumber() * 600;
