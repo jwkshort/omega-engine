@@ -42,10 +42,11 @@ class ReStackLayer
                     getEffectDisplay: effectDisplayTemplates.numberStandard(0, "+")
                 })
         };
-        this.metaUpgrade = new RestackLayerUpgrade("All your Layer Resources are multiplied each second",
-            level => new Decimal(1e10).pow(level.add("1").mul(level.add("1"))),
-            level => 1 + 0.3 * level.toNumber(),{
-                maxLevel: 5,
+        this.metaUpgrade = new RestackLayerUpgrade("All your Layer Resources are multiplied each second", level => Decimal.pow(10, level),
+        level => Decimal.pow(10, level),
+        level => Decimal.mul(100),
+            level => 1 + 0.2 * level.toNumber(),{
+                maxLevel: 10000
             });
         this.upgradeTree = [
             [
@@ -130,30 +131,6 @@ class ReStackLayer
                         }
                     }),
             ],
-            [
-                new RestackLayerUpgrade("Template",
-                    level => new Decimal("1ee308"),
-                    level => new Decimal(1).add(level), {
-                        maxLevel: 1
-                    }),
-                new RestackLayerUpgrade("Template",
-                    level => new Decimal("1ee308"),
-                    level => new Decimal(1).add(level.mul(0.15)), {
-                        maxLevel: 1,
-                        getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
-                    }),
-            ],
-            [
-                new RestackLayerUpgrade("Template",
-                    level => new Decimal("1ee1000"),
-                    level => level.gt(0), {
-                        maxLevel: 1,
-                        getEffectDisplay: function()
-                        {
-                            return this.level.gt(0) ? "Doesn't reset" : "Resets";
-                        }
-                    }),
-            ]
         ];
         this.upgradeTree[1][0].setRequirements([this.upgradeTree[0][0]], [this.upgradeTree[1][1]]);
         this.upgradeTree[1][1].setRequirements([this.upgradeTree[0][0]], [this.upgradeTree[1][0]]);
@@ -164,9 +141,6 @@ class ReStackLayer
         this.upgradeTree[5][0].setRequirements([this.upgradeTree[4][0]], [this.upgradeTree[5][1]]);
         this.upgradeTree[5][1].setRequirements([this.upgradeTree[4][0]], [this.upgradeTree[5][0]]);
         this.upgradeTree[6][0].setRequirements([this.upgradeTree[5][0], this.upgradeTree[5][1]], []);
-        this.upgradeTree[7][0].setRequirements([this.upgradeTree[6][0]], [this.upgradeTree[7][1]]);
-        this.upgradeTree[7][1].setRequirements([this.upgradeTree[6][0]], [this.upgradeTree[7][0]]);
-        this.upgradeTree[8][0].setRequirements([this.upgradeTree[7][0], this.upgradeTree[7][1]], []);
         this.upgradeTreeNames = {
             resourceMultiplier: this.upgradeTree[0][0],
             resourceMultiplierUpgrades: this.upgradeTree[1][0],
@@ -178,15 +152,12 @@ class ReStackLayer
             resourcePowerersStrength: this.upgradeTree[5][0],
             resourceMultipliersLevelScaling: this.upgradeTree[5][1],
             noReset: this.upgradeTree[6][0],
-            template1: this.upgradeTree[7][0],
-            template2: this.upgradeTree[7][1],
-            template3: this.upgradeTree[8][0]
         };
     }
 
     isUnlocked()
     {
-        return game.highestLayer >= 9;
+        return game.highestLayer >= 6;
     }
 
     getPermUpgradeCost()
@@ -197,7 +168,7 @@ class ReStackLayer
     getRestackGain()
     {
         const l = game.metaLayer.active ? game.metaLayer.layer : new Decimal(game.layers.length - 1);
-        let gain = l >= 9 ? Decimal.pow(10, l.sub(9).floor()) : new Decimal(0);
+        let gain = l >= 0 ? Decimal.pow(25, l.sub(6).floor()) : new Decimal(0);
         if (!game.metaLayer.active) {
             for (const layer of game.layers) {
                 if (layer.hasChallenges() && layer.layer >= 9) {
