@@ -1,6 +1,11 @@
 Vue.component("changelog-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title>v1.3.1</template>
+    <template v-slot:text>- Add 2 Achievements. Total: 72 Achievements<br>- Add ? Secret Achievements. Total: ? Secret Achievements<br>- Updated omega engine to v0.2.3<br>- Endgame: Layer 1e312<br> - New content coming soon...
+    </template>
+    </guide-item>
+    <guide-item>
     <template v-slot:title>v1.3</template>
     <template v-slot:text>- Add ? Secret Achievements. Total: ? Secret Achievements<br>- Add 2 Custom Names.<br>- Add a Prestige layer.<br>- Softcapped Layers gain past 1.8e308<br> - Edited Description, Icon, and Names<br> - Endgame: Layer 1e312<br> - New content coming soon...
     </template>
