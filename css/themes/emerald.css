@@ -13,10 +13,6 @@
     --notification--special: #947f1f;
 }
 
-body{
-    font-family: 'Montserrat', sans-serif;
-}
-
 img[src*=".svg"]{
     filter: invert(0.5);
 }
