@@ -1,7 +1,7 @@
 var mod = {
     primaryName: "ΩL",
     secondaryName: " EZ",
-    version: "1.3.0",
+    version: "1.3.2",
     engineVer: "0.2.3", //DO NOT MODIFY
     debugMode: true,
     themes: [

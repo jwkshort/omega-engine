@@ -32,7 +32,7 @@ class FunctionsLayer
 
     isUnlocked()
     {
-        return game.highestUpdatedLayer >= new Decimal("1.8e308");
+        return game.highestUpdatedLayer.gte("1.8e308");
     }
 
     getFunctionsBoostFromLayer()
