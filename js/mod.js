@@ -77,7 +77,7 @@ var mod = {
         ["Minecraft", "css/fonts/minecraft.css"],
         ["Special Elite", "css/fonts/special-elite.css"],
         ["Courier", "css/fonts/courier.css"],
-        ["Montserrat", "css/fonts/Montserrat.css"],
+        ["Montserrat", "css/fonts/montserrat.css"],
     ],
     saves: [
         ["Save 1", ""],
