@@ -40,8 +40,22 @@ Vue.component("functions-layer", {
     <functions-upgrade :upgrade="functions.upgrades.functionsGain"></functions-upgrade>
     <functions-upgrade :upgrade="functions.upgrades.functionsBonus"></functions-upgrade>
     </div>
-    <div>
-    <p New Contents coming soon...></p>
+    <h3>Variables</h3>
+    <p>ƒ(<b>x</b>)=<b>γx</b><sup>2.5</sup>+<b>βx</b><sup>2</sup>+<b>αx</b><sup>1.5</sup>+<b>x</b> = {{formatNumber(functions.getFunctionsValue(), 2, 2, 1e9)}}</p>
+    <p>ƒ(<b>x</b>) also multiplies functions points gain</p>
+    <div class="upgrades">
+    <functions-upgrade :upgrade="functions.upgrades.Variable_X"></functions-upgrade>
+    <functions-upgrade :upgrade="functions.upgrades.Variable_alpha"></functions-upgrade>
+    <functions-upgrade :upgrade="functions.upgrades.Variable_beta"></functions-upgrade>
+    <functions-upgrade :upgrade="functions.upgrades.Variable_gamma"></functions-upgrade>
+    </div>
+    </div>
+    <h3>Functions</h3>
+    <div class="upgrades">
+    <functions-upgrade :upgrade="functions.upgrades.ResourceMultipliersBasedOnLayers"></functions-upgrade>
+    <functions-upgrade :upgrade="functions.upgrades.SelfFunctions"></functions-upgrade>
+    <functions-upgrade :upgrade="functions.upgrades.MoreLayerCoins"></functions-upgrade>
+    <functions-upgrade :upgrade="functions.upgrades.CostDivider"></functions-upgrade>
     </div>
 </div>
 </div>`

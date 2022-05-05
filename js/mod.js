@@ -1,7 +1,7 @@
 var mod = {
     primaryName: "ΩL",
     secondaryName: " EZ",
-    version: "1.3.2",
+    version: "1.4",
     engineVer: "0.2.3", //DO NOT MODIFY
     debugMode: true,
     themes: [
@@ -55,6 +55,12 @@ var mod = {
             "1",
             "2345"
         ]],
+        ["Who's on first?",
+        [
+            ["YES", "FIRST", "DISPLAY", "OKAY", "SAYS", "NOTHING", "", "BLANK", "NO", "LED", "LEAD", "READ", "RED", "REED", "LEED", "HOLD ON", "YOU", "YOU ARE", "YOUR", "YOU'RE", "UR", "THERE", "THEY'RE", "THEIR", "THEY ARE", "SEE", "C", "CEE"],
+            ["READY", "FIRST", "NO", "BLANK", "NOTHING", "YES", "WHAT", "UHHH", "LEFT", "RIGHT", "MIDDLE", "OKAY", "WAIT", "PRESS", "YOU", "YOU'RE", "UR", "U", "UH HUH", "UH UH", "WHAT?", "DONE", "NEXT", "HOLD", "SURE", "LIKE"],
+            ["WHO'S", "ON", "FIRST?"]
+        ]],
         ["Random",
         [
             Utils.createRandomWord(10, new Random(Date.now()).nextInt()),
@@ -70,6 +76,8 @@ var mod = {
         ["Comfortaa", "css/fonts/comfortaa.css"],
         ["Minecraft", "css/fonts/minecraft.css"],
         ["Special Elite", "css/fonts/special-elite.css"],
+        ["Courier", "css/fonts/courier.css"],
+        ["Montserrat", "css/fonts/Montserrat.css"],
     ],
     saves: [
         ["Save 1", ""],

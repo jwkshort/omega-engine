@@ -1,0 +1,8 @@
+@font-face{
+    font-family: special-elite;
+    src: url('../../fonts/Courier.ttf');
+}
+
+:root{
+    --primary-font: special-elite
+}

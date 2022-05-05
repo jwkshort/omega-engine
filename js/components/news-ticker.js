@@ -198,7 +198,7 @@ Vue.component("news-ticker", {
                 () => "This Number is randomly generated -> " + Math.pow(10, Math.random() * 6.01).toFixed(2) +
                     ". If it's above 1 000 000, consider yourself lucky!",
                     () => functions.formatNumber(game.metaLayer.active ? game.metaLayer.getApproxAlpha() : game.layers[0].resource, 2, 0, 1e9) + " α? That's just a rookie number",
-                    () => "Rookie number? That's just" + functions.formatNumber(game.metaLayer.active ? game.metaLayer.getApproxAlpha() : game.layers[0].resource, 2, 0, 1e9) + " α",
+                    () => "Rookie number? That's just " + functions.formatNumber(game.metaLayer.active ? game.metaLayer.getApproxAlpha() : game.layers[0].resource, 2, 0, 1e9) + " α",
                     () => "Motto of the Day: " + Utils.getMOTD(),
                     () => "I have your IP adress it's " + (Math.random() * 255).toFixed(0) + "." + (Math.random() * 255).toFixed(0) + "." + (Math.random() * 255).toFixed(0) + "." + (Math.random() * 255).toFixed(0) + " =)"
             ],

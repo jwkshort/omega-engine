@@ -208,7 +208,14 @@ class ReStackLayer
                 }
             }
         }
+        gain = gain.pow(this.LayerCoinsBonus())
         return gain
+    }
+
+    LayerCoinsBonus()
+    {
+        return new Decimal(1)
+        .mul(game.functionsLayer.upgrades.MoreLayerCoins.apply());
     }
 
     allPermUpgradesBought()
