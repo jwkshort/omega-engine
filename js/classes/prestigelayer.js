@@ -149,7 +149,7 @@ class PrestigeLayer
 
     createGenerators()
     {
-        this.generators = [];
+        this.generators = this.hasGenerators() ? this.generators : [];
         for(let i = 0; i < 10; i++)
         {
             const baseProd = i === 0 ? new Decimal(1) : new Decimal(0.2);
