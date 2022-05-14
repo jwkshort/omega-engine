@@ -30,13 +30,9 @@ class PrestigeLayer
             {
                 this.createPowerGenerators();
             }
-            if(feature === FEATURE_CHALLENGES)
+            if(feature === FEATURE_CHALLENGES or feature === FEATURE_UPGRADE_TREE)
             {
                 this.createChallenges();
-            }
-            if(feature === FEATURE_UPGRADE_TREE)
-            {
-                this.createUpgradeTree();
             }
             if(feature === FEATURE_RESOURCEBUTTON)
             {
