@@ -3,6 +3,7 @@ class AlephLayer
     constructor()
     {
         this.aleph = new Decimal(0);
+        this.bestaleph = new Decimal (0);
         this.upgrades = {
             alephGain: new AlephUpgrade("Increase your aleph gain", level => Decimal.pow(1.215, level).mul(100),
                 level => Decimal.pow(1.2 + game.restackLayer.permUpgrades.aleph.apply(), level)),
@@ -76,6 +77,7 @@ class AlephLayer
         if(this.isUnlocked())
         {
             this.aleph = this.aleph.add(this.getAlephGain().mul(dt));
+            this.bestaleph = Decimal.max(this.bestaleph, this.aleph);
         }
     }
 

@@ -91,7 +91,7 @@ class MetaLayer
     {
         let base = this.getMultiPS().log10().div(PrestigeLayer.getPrestigeCarryOverForLayer(this.layer))
         let eff = base
-        if (eff.gte("1.8e308")) eff = new Decimal ("1.8e308").mul(eff.div("1.8e308").pow(0.2))
+        if (eff.gte("1.8e308")) eff = new Decimal ("1.8e308").mul(eff.div("1.8e308").pow(game.functionsLayer.upgrades.WeakSoftcap.apply()))
         return eff;
     }
 
@@ -102,7 +102,9 @@ class MetaLayer
             .mul(game.restackLayer.upgradeTreeNames.resourceMultiplierUpgrades2.apply())
             .mul(game.restackLayer.upgradeTreeNames.resourceMultiplierUpgrades2.apply())
             .mul(game.functionsLayer.getFunctionsEff.apply())
-            .mul(game.functionsLayer.upgrades.ResourceMultipliersBasedOnLayers.apply());
+            .mul(game.functionsLayer.upgrades.ResourceMultipliersBasedOnLayers.apply())
+            .mul(game.functionsLayer.upgrades.ResourceMultipliersBasedOnfx.apply())
+            .mul(game.functionsLayer.upgrades.NumberRM.apply());
     }
 
     getResourcePowererBoost()

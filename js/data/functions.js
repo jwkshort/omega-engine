@@ -137,7 +137,7 @@ const functions = {
             }
             if(value instanceof Achievement)
             {
-                return {title: value.title, isCompconsted: value.isCompconsted};
+                return {title: value.title, isCompleted: value.isCompleted};
             }
             if(value instanceof AlephLayer)
             {
@@ -145,7 +145,7 @@ const functions = {
             }
             if(value instanceof FunctionsLayer)
             {
-                return {functions: "d" + value.functionsPoints, upgrades: value.upgrades};
+                return {functionsPoints: "d" + value.functionsPoints, number: "d" + value.number, upgrades: value.upgrades};
             }
             if(value instanceof Generator)
             {
@@ -267,6 +267,14 @@ const functions = {
         else
         {
             game.alephLayer = new AlephLayer();
+        }
+        if(loadObj.functionsLayer)
+        {
+            game.functionsLayer.loadFromSave(loadObj.functionsLayer);
+        }
+        else
+        {
+            game.functionsLayer = new FunctionsLayer();
         }
         if(loadObj.automators)
         {

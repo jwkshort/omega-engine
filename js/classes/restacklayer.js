@@ -132,13 +132,13 @@ class ReStackLayer
             [
                 new RestackLayerUpgrade("Resource Powerers are stronger based on Layer coins",
                     level => new Decimal("1ee308").pow(Decimal.pow(1e20, level).mul(Decimal.pow(1e5, level.pow(1.25)))),
-                    level => new Decimal (1).add(Decimal.mul(game.restackLayer.layerCoins.add(1).log(10).add(1).log(10).add(1).log(10).div(60), Decimal.max(0, level).pow(0.6))), {
+                    level => new Decimal (1).add(Decimal.mul(game.restackLayer.layerCoins.add(1).log(10).add(1).log(10).add(1).log(10).div(15), Decimal.max(0, level).pow(0.6))), {
                         maxLevel: 5,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(3, "x")
                     }),
                 new RestackLayerUpgrade("Resource Multipliers are stronger based on Layer coins",
                     level => new Decimal("1ee308").pow(Decimal.pow(1e20, level).mul(Decimal.pow(1e5, level.pow(1.25)))),
-                    level => new Decimal (1).add(Decimal.mul(game.restackLayer.layerCoins.add(1).log(10).add(1).log(10).add(1).log(10).div(80), Decimal.max(0, level).pow(0.6))), {
+                    level => new Decimal (1).add(Decimal.mul(game.restackLayer.layerCoins.add(1).log(10).add(1).log(10).add(1).log(10).div(40), Decimal.max(0, level).pow(0.6))), {
                         maxLevel: 5,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")
                     }),

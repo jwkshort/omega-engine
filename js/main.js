@@ -50,7 +50,7 @@ function tickGame(seconds)
             titleInfo += game.metaLayer.active ? functions.formatNumber(game.metaLayer.layer.add(1), 3, 0) : new Decimal(1).add(game.highestLayer);
             break;
     }
-    document.title = "ωEngine" + (game.settings.titleStyle !== 0 ? ":" : "") + " " + titleInfo;
+    document.title = "Omega Layers EZ" + (game.settings.titleStyle !== 0 ? ":" : "") + " " + titleInfo;
 
     if(saveTimer > 30)
     {
@@ -88,8 +88,10 @@ function tickGame(seconds)
         }
     }
 
+    game.bestnumber = Decimal.max(new Decimal(game.bestnumber), game.functionsLayer.number)
     game.highestLayer = Decimal.max(new Decimal(game.highestLayer), game.layers.length - 1);
     game.highestLayer = Decimal.max(new Decimal(game.highestLayer), game.metaLayer.layer);
+    game.highestLayerpremeta = Decimal.max(new Decimal(game.layers.highestLayerpremeta), game.layers.length - 1);
     game.highestUpdatedLayer = Decimal.max(new Decimal(game.highestUpdatedLayer), game.layers.length - 1);
     game.highestUpdatedLayer = Decimal.max(new Decimal(game.highestUpdatedLayer), game.metaLayer.layer);
 
@@ -244,16 +246,16 @@ onkeydown = e =>
         {
             game.settings.tab = "Automators";
         }
-        if(lc === "F" && !e.ctrlKey && game.highestLayer >= Infinity)
-        {
-            game.settings.tab = "Functions";
-        }
     }
     else
     {
         if(lc === "l")
         {
             game.settings.tab = "Layers";
+        }
+        if(lc === "f" && !e.ctrlKey && game.highestLayer.gte("1e308"))
+        {
+            game.settings.tab = "Functions";
         }
     }
 

@@ -1,16 +1,17 @@
 var mod = {
     primaryName: "ΩL",
     secondaryName: " EZ",
-    version: "1.4",
+    version: "1.5",
     engineVer: "0.2.3", //DO NOT MODIFY
-    debugMode: true,
+    debugMode: false,
     themes: [
         ["Dark", "css/themes/dark.css"],
         ["Light (Legacy)", "https://veprogames.github.io/omega-layers/css/main.css"],
         ["Neon", "css/themes/neon.css"],
         ["Godot Blue", "css/themes/darkblue.css"],
         ["Halloween", "css/themes/spooky.css"],
-        ["eXPerience", "css/themes/experience.css"]
+        ["eXPerience", "css/themes/experience.css"],
+        ["Blue/Cyan Neon", "css/themes/blueneon.css"]
     ],
     layerNames: [
         ["Ω-Lλγers",

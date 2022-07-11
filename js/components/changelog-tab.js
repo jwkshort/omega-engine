@@ -1,6 +1,11 @@
 Vue.component("changelog-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title>v1.5 - the epic update</template>
+    <template v-slot:text>- Fix Save and Achievements<br>- Add even more Contents to Functions<br>- Buff both Row 8 upgrades in meta upgrade tree<br>- Add Guide (trust me it's helpful)<br>- Add 11 Achievements. Total: 91 Achievements<br>- Add ? Secret Achievements. Total: ?? Secret Achievements<br>- Endgame: Layer 1e470<br> - New content coming soon...
+    </template>
+    </guide-item>
+    <guide-item>
     <template v-slot:title>v1.4</template>
     <template v-slot:text>- Improve the softcap formula after layer 1.8e308 layers/s<br>- Add more Contents to Functions layer.<br> - Add 8 Achievements. Total: 80 Achievements<br>- Add ? Secret Achievements. Total: ?? Secret Achievements<br>- Add 2 new fonts.<br>- Add a new names.<br><br>- Endgame: Layer 1e327<br> - New content coming soon...
     </template>
