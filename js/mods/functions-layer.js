@@ -52,7 +52,7 @@ Vue.component("functions-layer", {
             <p>Current Effect Formula: max.(log<sub>2</sub>(x)-1024 , 0)<sup>{{formatNumber(functions.getFBFLexpo(), 2, 2, 1e9)}}</sup></p>
         </div>
         <div v-else>
-            <p>Current Effect Formula: log<sub>2</sub>(x)-1024</p>
+            <p>Current Effect Formula: max.(log<sub>2</sub>(x)-1024 , 0)</p>
         </div>
     </div>
     <div v-else>
