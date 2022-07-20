@@ -47,9 +47,9 @@ Vue.component("functions-layer", {
     <div class="boosts">
     <div v-if="canProduceFunctions">
         <p>Your layer boosts the gain of functions points, translated to a x{{formatNumber(functions.getFunctionsBoostFromLayer(), 2, 2, 1e9)}} Boost on <span class="aleph">functions</span> gain</p>
-        <p>Base Effect Formula: log<sub>2</sub>(x)-1024</p>
+        <p>Base Effect Formula: max.(log<sub>2</sub>(x)-1024 , 0)</p>
         <div v-if="EighthFunctionsOwned">
-            <p>Current Effect Formula: (log<sub>2</sub>(x)-1024)<sup>{{formatNumber(functions.getFBFLexpo(), 2, 2, 1e9)}}</sup></p>
+            <p>Current Effect Formula: max.(log<sub>2</sub>(x)-1024 , 0)<sup>{{formatNumber(functions.getFBFLexpo(), 2, 2, 1e9)}}</sup></p>
         </div>
         <div v-else>
             <p>Current Effect Formula: log<sub>2</sub>(x)-1024</p>

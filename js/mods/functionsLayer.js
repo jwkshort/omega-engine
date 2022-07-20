@@ -226,7 +226,7 @@ class FunctionsLayer
     getFunctionsBoostFromLayer()
     {
         if(game.metaLayer.layer.lte(new Decimal("1.8e308"))) return new Decimal(0);
-        let base = Decimal.log2(game.metaLayer.layer.add(1)).sub("1024")
+        let base = Decimal.log2(game.metaLayer.layer.add(1)).sub("1024").max(0)
         let eff = base.pow(this.getFBFLexpo())
         return eff
     }
