@@ -102,9 +102,9 @@ Vue.component("functions-layer", {
     <h3>Number</h3>
     <div v-if="EighthFunctionsOwned">
     <div class="resource">
-    <p>Your number is currently {{formatNumber(functions.number, 2, 2, 1e9)}}</p>
-    <p>Which is increasing by x{{formatNumber(functions.getNumberMult(), 2, 2, 1e9)}} every second</p>
-    <p>But capped at {{formatNumber(functions.getNumberLimit(), 2, 2, 1e9)}}</p>
+    <p>Your number is currently <span class="big-number">{{formatNumber(functions.number, 2, 2, 1e9)}}</span></p>
+    <p>Which is increasing by x<span class="big-number">{{formatNumber(functions.getNumberMult(), 2, 2, 1e9)}}</span> every second</p>
+    <p>But capped at <span class="big-number">{{formatNumber(functions.getNumberLimit(), 2, 2, 1e9)}}</span></p>
     </div>
     <div class="boosts">
     <div v-if="NumberSoftcap1">

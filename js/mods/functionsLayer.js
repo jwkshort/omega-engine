@@ -16,17 +16,17 @@ class FunctionsLayer
             {getEffectDisplay: effectDisplayTemplates.percentStandard(3, "", " %", 0)}
             ),
             Variable_X: new FunctionsUpgrade("Increase the value of <b>x</b>",
-            level => ((game.functionsLayer.upgrades.ResourceMultipliersBasedOnLayers.level.gte(1)) ? Decimal.pow(1e3, level.add(1)) : new Decimal (Infinity)).div(this.getVariablesCostDivide()),
+            level => ((game.functionsLayer.upgrades.ResourceMultipliersBasedOnLayers.level.gte(1)) ? Decimal.pow(1e3, level.add(1)) : Decimal.dInf).div(this.getVariablesCostDivide()),
             level => new Decimal (1).add(level).add(this.upgrades.Variable_alpha.apply()),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "",)}
             ),
             Variable_alpha: new FunctionsUpgrade("Increase the value of <b>α</b>",
-            level => ((game.functionsLayer.upgrades.SelfFunctions.level.gte(1)) ? Decimal.pow(1e9, level.add(1)) : new Decimal (Infinity)).div(this.getVariablesCostDivide()),
+            level => ((game.functionsLayer.upgrades.SelfFunctions.level.gte(1)) ? Decimal.pow(1e9, level.add(1)) : Decimal.dInf).div(this.getVariablesCostDivide()),
             level => level.add(this.upgrades.Variable_beta.apply()),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "",)}
             ),
             Variable_beta: new FunctionsUpgrade("Increase the value of <b>β</b>",
-            level => ((game.functionsLayer.upgrades.MoreLayerCoins.level.gte(1)) ? Decimal.pow(1e18, level.add(1)).mul(1e32) : new Decimal (Infinity)).div(this.getVariablesCostDivide()),
+            level => ((game.functionsLayer.upgrades.MoreLayerCoins.level.gte(1)) ? Decimal.pow(1e18, level.add(1)).mul(1e32) : Decimal.dInf).div(this.getVariablesCostDivide()),
             level => level.add(this.upgrades.Variable_gamma.apply()),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "",)}
             ),
@@ -36,28 +36,28 @@ class FunctionsLayer
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "",)}
             ),
             Variable_delta: new FunctionsUpgrade("Increase the value of <b>δ</b>",
-            level => ((game.functionsLayer.upgrades.ResourceMultipliersBasedOnfx.level.gte(1)) ? Decimal.pow(1e45, level.add(1)).mul(1e55) : new Decimal (Infinity)).div(this.getVariablesCostDivide()),
+            level => ((game.functionsLayer.upgrades.ResourceMultipliersBasedOnfx.level.gte(1)) ? Decimal.pow(1e45, level.add(1)).mul(1e55) : Decimal.dInf).div(this.getVariablesCostDivide()),
             level => level.add(this.upgrades.Variable_epsilon.apply()),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "",)}
             ),
             Variable_epsilon: new FunctionsUpgrade("Increase the value of <b>ε</b>",
-            level => ((game.functionsLayer.upgrades.MoreFP.level.gte(1)) ? Decimal.pow(1e63, level.add(1)).mul(1e65) : new Decimal (Infinity)).div(this.getVariablesCostDivide()),
+            level => ((game.functionsLayer.upgrades.MoreFP.level.gte(1)) ? Decimal.pow(1e63, level.add(1)).mul(1e65) : Decimal.dInf).div(this.getVariablesCostDivide()),
             level => level.add(this.upgrades.Variable_zeta.apply()),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "",)}
             ),
             Variable_zeta: new FunctionsUpgrade("Increase the value of <b>ζ</b>",
-            level => ((game.functionsLayer.upgrades.VariablesCostDivider.level.gte(1)) ? Decimal.pow(1e84, level.add(1)).mul(1e116) : new Decimal (Infinity)).div(this.getVariablesCostDivide()),
+            level => ((game.functionsLayer.upgrades.VariablesCostDivider.level.gte(1)) ? Decimal.pow(1e84, level.add(1)).mul(1e116) : Decimal.dInf).div(this.getVariablesCostDivide()),
             level => level.add(this.upgrades.Variable_eta.apply()),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "",)}
             ),
             Variable_eta: new FunctionsUpgrade("Increase the value of <b>η</b>",
-            level => ((game.functionsLayer.upgrades.UnlockNumber.level.gte(1)) ? Decimal.pow(1e108, level.add(1)).mul(1e148) : new Decimal (Infinity)).div(this.getVariablesCostDivide()),
+            level => ((game.functionsLayer.upgrades.UnlockNumber.level.gte(1)) ? Decimal.pow(1e108, level.add(1)).mul(1e148) : Decimal.dInf).div(this.getVariablesCostDivide()),
             level => level,
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "",)}
             ),
             ResourceMultipliersBasedOnLayers: new FunctionsUpgrade("All Resource Multipliers are stronger based on Layer you currently on",
             level => Decimal.pow(1e5, level.pow(1.25)).mul(1000),
-            level => new Decimal (1).add(game.metaLayer.layer.mul(level).pow(level.pow(0.6)).add(1).log10().pow(0.8).div(10)),
+            level => new Decimal (1).add(game.metaLayer.layer.mul(level).pow(level.pow(0.6)).add(1).log10().pow(0.8).div(10)).pow(game.achievements[90].isCompleted ? this.upgrades.Variable_zeta.apply() : new Decimal (1)),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")}
             ),
             SelfFunctions: new FunctionsUpgrade("Gain more Functions Points based on log(ƒP)",
@@ -96,42 +96,42 @@ class FunctionsLayer
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")}
             ),
             NumberMultiplier: new FunctionsUpgrade("Increase the Number Multiplier",
-            level => (this.upgrades.UnlockNumber.level.gte(1)) ? new Decimal ("1.8e308").mul(Decimal.pow(1e10, level)).mul(Decimal.pow(1e5, (level.sub(2).max(0).mul(level.sub(1).max(0))).div(2))) : new Decimal (Infinity),
+            level => (this.upgrades.UnlockNumber.level.gte(1)) ? new Decimal ("1.8e308").mul(Decimal.pow(1e10, level)).mul(Decimal.pow(1e5, (level.sub(2).max(0).mul(level.sub(1).max(0))).div(2))) : Decimal.dInf,
             level => level.pow(0.6).add(1),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "x")}
             ),
             fxtoNumberMultiplier: new FunctionsUpgrade("Increase the Number Multiplier based on ƒ(<b>x</b>)",
-            level => (this.upgrades.UnlockNumber.level.gte(1)) ? new Decimal ("4.04e404").mul(Decimal.pow(1e15, level)).mul(Decimal.pow(1e5, (level.sub(2).max(0).mul(level.sub(1).max(0))).div(2))) : new Decimal (Infinity),
+            level => (this.upgrades.UnlockNumber.level.gte(1)) ? new Decimal ("4.04e404").mul(Decimal.pow(1e15, level)).mul(Decimal.pow(1e5, (level.sub(2).max(0).mul(level.sub(1).max(0))).div(2))) : Decimal.dInf,
             level => this.getFunctionsValue().add(1).log10().add(1).ln().add(1).pow(level.pow(0.4)),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "x")}
             ),
             NumberLimit: new FunctionsUpgrade("Increase the Number Limit (Can be only bought when your number is capped)",
-            level => (game.functionsLayer.number.gte(this.getNumberLimit())||this.upgrades.NumberLimit2.level.gte(1)) ? new Decimal ("1.8e308").mul(Decimal.pow(1e20, level)).mul(Decimal.pow(1e5, (level.sub(1).max(0).mul(level.max(0))).div(2))) : new Decimal (Infinity),
+            level => (game.functionsLayer.number.gte(this.getNumberLimit())||this.upgrades.NumberLimit2.level.gte(1)) ? new Decimal ("1.8e308").mul(Decimal.pow(1e20, level)).mul(Decimal.pow(1e5, (level.sub(1).max(0).mul(level.max(0))).div(2))) : Decimal.dInf,
             level => Decimal.pow(1.1, level.pow(0.6)),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")}
             ),
             NumberRM: new FunctionsUpgrade("Number boosts all Resource Multiplier at a reduced rate",
-            level => (this.upgrades.UnlockNumber.level.gte(1)) ? new Decimal ("1.8e308").mul(Decimal.pow(1e5, (level.sub(1).max(0)).mul(level.sub(2).max(0)).div(2))).mul(Decimal.pow(1e25, level)) : new Decimal (Infinity),
+            level => (this.upgrades.UnlockNumber.level.gte(1)) ? new Decimal ("1.8e308").mul(Decimal.pow(1e5, (level.sub(1).max(0)).mul(level.sub(2).max(0)).div(2))).mul(Decimal.pow(1e25, level)) : Decimal.dInf,
             level => Decimal.pow(this.getNumberEff().pow(0.125), level.pow(0.5)),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")}
             ),
             WeakDivider: new FunctionsUpgrade("Number Multiplier Divider is weaker and boost functions gain by <b>ζ</b> per level",
-            level => (this.upgrades.UnlockNumber.level.gte(1)&&game.achievements[76].isCompleted) ? new Decimal ("4.04e406").mul(Decimal.pow(1e2, level.pow(3).sub(1))).mul(Decimal.pow(1e20, level)) : new Decimal (Infinity),
+            level => (this.upgrades.UnlockNumber.level.gte(1)&&game.achievements[76].isCompleted) ? new Decimal ("4.04e406").mul(Decimal.pow(1e2, level.pow(3).sub(1))).mul(Decimal.pow(1e20, level)) : Decimal.dInf,
             level => Decimal.pow(0.9, level.pow(0.6)),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")}
             ),
             NumberLimit2: new FunctionsUpgrade("Your highest layer increases the number limit base and the 3rd number upgrade can be bought anytime",
-            level => (this.upgrades.UnlockNumber.level.gte(1)&&game.achievements[76].isCompleted) ? new Decimal ("4.04e404").mul(Decimal.pow(1e5, (level.sub(1).max(0)).mul(level.sub(2).max(0)).div(2))).mul(Decimal.pow(1e30, level)) : new Decimal (Infinity),
+            level => (this.upgrades.UnlockNumber.level.gte(1)&&game.achievements[76].isCompleted) ? new Decimal ("4.04e404").mul(Decimal.pow(1e5, (level.sub(1).max(0)).mul(level.sub(2).max(0)).div(2))).mul(Decimal.pow(1e30, level)) : Decimal.dInf,
             level => Decimal.pow(game.highestLayer.pow(0.125).add(1), level.pow(0.6)),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "x")}
             ),
             FunctionsNumberMult: new FunctionsUpgrade("Increase the Number Multiplier based on ƒP",
-            level => (this.upgrades.UnlockNumber.level.gte(1)&&game.achievements[76].isCompleted) ? new Decimal ("1e512").mul(Decimal.pow(1e5, (level.sub(1).max(0)).mul(level.sub(2).max(0)).div(2))).mul(Decimal.pow(1e10, level)) : new Decimal (Infinity),
+            level => (this.upgrades.UnlockNumber.level.gte(1)&&game.achievements[76].isCompleted) ? new Decimal ("1e512").mul(Decimal.pow(1e5, (level.sub(1).max(0)).mul(level.sub(2).max(0)).div(2))).mul(Decimal.pow(1e10, level)) : Decimal.dInf,
             level => Decimal.pow(this.functionsPoints.add(1).ln().add(1).ln(), level.pow(0.6)),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "x")}
             ),
             WeakSoftcap: new FunctionsUpgrade("Layer Softcap is weaker and Boost Functions gain by log(Number Limit)<sup>0.5</sup> per <b>η</b> per level<sup>0.25</sup>",
-            level => (this.upgrades.UnlockNumber.level.gte(1)&&game.achievements[76].isCompleted) ? new Decimal(["5.55e555", "1e729"][level.toNumber()]) : new Decimal (Infinity),
+            level => (this.upgrades.UnlockNumber.level.gte(1)&&game.achievements[76].isCompleted) ? new Decimal(["5.55e555", "1e729"][level.toNumber()]) : Decimal.dInf,
             level => [new Decimal (0.2), new Decimal (0.225), new Decimal (0.25)][level.toNumber()],
             {
                 maxLevel: new Decimal (2),

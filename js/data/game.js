@@ -180,7 +180,8 @@ const game = {
         new Achievement("Capped out", "Reach the number ~1.8e308", '<span class="aleph">&#8734;</span>', () => Decimal.gte(game.functionsLayer.number, "1.8e308")),
         new Achievement("Extended", "Increase the number limit", '<span class="aleph">+1</span>', () => game.functionsLayer.upgrades.NumberLimit.level.gte(1)),
         new Achievement("One for Everything", "Gain ee420.69 Layer Coins", "<img alt=\"LC\" class=\"inline\" src=\"images/layercoin.svg\"/>", () => game.restackLayer.layerCoins.gte("ee420.69")),
-        new Achievement("Endgame", "Reach layer 1e470 and finish Omega Layers EZ", "Ʊ", () => game.metaLayer.layer.gte("1e416")),
+        new Achievement("Fine.", "First Functions upgrade's effect goes to ^100 Reward: Raise the Effect to <b>&zeta;</b>", "😐", () => game.functionsLayer.upgrades.ResourceMultipliersBasedOnLayers.apply().gte("100")),
+        new Achievement("Endgame", "Reach layer 1e470 and finish Omega Layers EZ", "Ʊ", () => game.metaLayer.layer.gte("1e470")),
     ],
     secretAchievements: [
         new Achievement("Meta sucks!", "Reach Layer 96 without going meta", "<img alt=\"LC\" class=\"inline\" src=\"images/layercoin.svg\"/>", () => game.highestLayerpremeta >= 95),
