@@ -166,7 +166,7 @@ const game = {
         new Achievement("ƒ(x) = 2", "Reach 1,000,000 &#0131;P", '<span class="aleph">&#0131;<sub>2</sub></span>', () =>Decimal.gte(game.functionsLayer.functionsPoints, 1e6)),
         new Achievement("ƒ(x) = 3", "Reach 1.00e100 &#0131;P", '<span class="aleph">&#0131;<sub>3</sub></span>', () => Decimal.gte(game.functionsLayer.functionsPoints, 1e100)),
         new Achievement("ƒ(x) = 4", "Reach ~1.80e308 &#0131;P", '<span class="aleph">&#0131;<sub>&#8734;</sub></span>', () => Decimal.gte(game.functionsLayer.functionsPoints, "1.8e308")),
-        new Achievement("ƒ(x) = 5", "Reach 1.2e480 &#0131;P Reward: Unlock another row of Number Upgrades", '<span class="aleph">&#0131;<sub>5</sub></span>', () => Decimal.gte(game.functionsLayer.functionsPoints, "1.2e480")),
+        new Achievement("ƒ(x) = 5", "Reach 1.18e472 &#0131;P Reward: Unlock another row of Number Upgrades", '<span class="aleph">&#0131;<sub>5</sub></span>', () => Decimal.gte(game.functionsLayer.functionsPoints, "1.18e472")),
         new Achievement("Variables?", "Increase your <b>x</b>", '<span class="aleph">&#0131;<sub>x</sub></span>', () => game.functionsLayer.upgrades.Variable_X.level.gte(1)),
         new Achievement("Starting Again", "Increase your <b>&alpha;</b>", '<span class="aleph">&#0131;<sub>&alpha;</sub></span>', () => game.functionsLayer.upgrades.Variable_alpha.level.gte(1)),
         new Achievement("Other Times Still Await...", "Increase your <b>&beta;</b>", '<span class="aleph">&#0131;<sub>&beta;</sub></span>', () => game.functionsLayer.upgrades.Variable_beta.level.gte(1)),
@@ -180,7 +180,7 @@ const game = {
         new Achievement("Capped out", "Reach the number ~1.8e308", '<span class="aleph">&#8734;</span>', () => Decimal.gte(game.functionsLayer.number, "1.8e308")),
         new Achievement("Extended", "Increase the number limit", '<span class="aleph">+1</span>', () => game.functionsLayer.upgrades.NumberLimit.level.gte(1)),
         new Achievement("One for Everything", "Gain ee420.69 Layer Coins", "<img alt=\"LC\" class=\"inline\" src=\"images/layercoin.svg\"/>", () => game.restackLayer.layerCoins.gte("ee420.69")),
-        new Achievement("Fine.", "First Functions upgrade's effect goes to ^100 Reward: Raise the Effect to <b>&zeta;</b>", "😐", () => game.functionsLayer.upgrades.ResourceMultipliersBasedOnLayers.apply().gte("100")),
+        new Achievement("Fine.", "First Functions upgrade's effect goes to ^100 Reward: Raise its Effect to <b>&zeta;</b>", "😐", () => game.functionsLayer.upgrades.ResourceMultipliersBasedOnLayers.apply().gte("100")),
         new Achievement("Endgame", "Reach layer 1e470 and finish Omega Layers EZ", "Ʊ", () => game.metaLayer.layer.gte("1e470")),
     ],
     secretAchievements: [

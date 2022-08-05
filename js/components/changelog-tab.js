@@ -2,7 +2,7 @@ Vue.component("changelog-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
     <template v-slot:title>v1.5.2 - this update still stinks</template>
-    <template v-slot:text>- Attempt 2 on Fixing NaN Bug in Meta<br>- Add 1 Achievements Total: 92 Achievements (It was supposed to be on V1.6 but whatever)<br>- Endgame: Layer 1e470<br> - New content coming soon...
+    <template v-slot:text>- Attempt 2 on Fixing NaN Bug in Meta<br>- Reduce some timewalls in meta section<br>- Add 1 Achievements Total: 92 Achievements (It was supposed to be on V1.6 but whatever)<br>- Endgame: Layer 1e470<br> - New content coming soon...
     </template>
     </guide-item>
     <guide-item>
