@@ -165,7 +165,7 @@ const functions = {
             }
             if(value instanceof ReStackLayer)
             {
-                return {layerCoins: "d" + value.layerCoins, permUpgrades: value.permUpgrades, metaUpgrade: value.metaUpgrade, upgradeTree: value.upgradeTree, timeSpent: value.timeSpent};
+                return {layerCoins: "d" + value.layerCoins, permUpgrades: value.permUpgrades, metaUpgrade: value.metaUpgrade, upgradeTree: value.upgradeTree, timeSpent: value.timeSpent, u22Time: value.u22Time};
             }
             if(value instanceof MetaLayer)
             {
@@ -291,6 +291,17 @@ const functions = {
                 if(idx !== -1)
                 {
                     game.achievements[idx].isCompleted = ach.isCompleted;
+                }
+            }
+        }
+        if(loadObj.secretachievements)
+        {
+            for(const ach of loadObj.secretachievements)
+            {
+                const idx = game.secretAchievements.findIndex(a => a.title === ach.title);
+                if(idx !== -1)
+                {
+                    game.secretAchievements[idx].isCompleted = ach.isCompleted;
                 }
             }
         }

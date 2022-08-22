@@ -401,6 +401,7 @@ class MetaDynamicLayerUpgrade extends AbstractUpgrade
         const canBuy = this.canBuy();
         if(canBuy)
         {
+            game.restackLayer.u22Time = 0
             game.metaLayer.layer = game.restackLayer.upgradeTreeNames.substractLayers.apply() ? game.metaLayer.layer.sub(this.currentLayer()) : new Decimal(0);
             game.metaLayer.resource = new Decimal(1);
             this.level = this.level.add(1);
@@ -413,6 +414,7 @@ class MetaDynamicLayerUpgrade extends AbstractUpgrade
         this.level = new Decimal(Utils.determineMaxLevel(game.metaLayer.layer, this));
         if(this.level.sub(oldLvl).gt(0) && this.level.lt(1e9))
         {
+            game.restackLayer.u22Time = 0
             game.metaLayer.layer = game.metaLayer.layer.sub(this.getLayer(this.level.sub(1)));
         }
         while(this.currentLayer().lte(game.metaLayer.layer) && this.level.lt(1e9) && this.level.lt(this.maxLevel))

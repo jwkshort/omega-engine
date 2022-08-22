@@ -13,14 +13,38 @@ Vue.component("functions-layer", {
         {
             return this.functions.upgrades.UnlockNumber.level.gte(1);
         },
+        NumberUpgrades2: function()
+        {
+            return game.achievements[76].isCompleted
+        },
         isSoftCapped: function()
         {
-            return this.functions.FunctionsPoints.gte("2e1024");
+            return this.functions.functionsPoints.gte("2e1024");
         },
         NumberSoftcap1: function()
         {
             return this.functions.number.gte("1.8e308")
-        }
+        },
+        NumberSoftcap2: function()
+        {
+            return this.functions.number.gte("2e1024")
+        },
+        Enhancer1: function()
+        {
+            return game.achievements[90].isCompleted
+        },
+        Enhancer2: function()
+        {
+            return game.achievements[91].isCompleted
+        },
+        Enhancer3: function()
+        {
+            return game.achievements[92].isCompleted
+        },
+        Enhancer4: function()
+        {
+            return game.achievements[93].isCompleted
+        },
     },
     methods: {
         formatNumber: (n, prec, prec1000, lim) => functions.formatNumber(n, prec, prec1000, lim),
@@ -41,6 +65,11 @@ Vue.component("functions-layer", {
     </div>
     <div v-else>
         <p>Current Effect Formula: x<sup>0.5</sup></p>
+    </div>
+    <div v-if="isSoftCapped">
+    <p>This softcapped past 2.00e1024 ƒP</p>
+    </div>
+    <div v-else>
     </div>
     </div>
 
@@ -86,7 +115,6 @@ Vue.component("functions-layer", {
     </div>
 
     <h3>Functions</h3>
-    <p>You unlock a new variable for buying the corresponding functions</p>
     </div>
     <div class="upgrades">
     <functions-upgrade :upgrade="functions.upgrades.ResourceMultipliersBasedOnLayers"></functions-upgrade>
@@ -108,9 +136,16 @@ Vue.component("functions-layer", {
     </div>
     <div class="boosts">
     <div v-if="NumberSoftcap1">
-    <p>Your number is bigger than 1.80e308 which divide your multiplier by {{formatNumber(functions.getNumberSoftcap1Eff(), 2, 2, 1e9)}}</p>
+    <p>Your number is currently bigger than 1.80e308 which divide your multiplier by {{formatNumber(functions.getNumberSoftcap1Eff(), 2, 2, 1e9)}}</p>
     <p>Base Effect Formula: (log<sub>2</sub>(x/1.80e308)+1)<sup>0.6</sup></p>
     <p>Current Effect Formula: (log<sub>2</sub>(x/1.80e308)+1)<sup>{{formatNumber(functions.getNumberSoftcap1Expo(), 2, 2, 1e9)}}</sup></p>
+    </div>
+    <div v-else>
+    </div>
+    <div v-if="NumberSoftcap2">
+    <p>Your number is currently bigger than 2e1024 which divide your multiplier by {{formatNumber(functions.getNumberSoftcap2Eff(), 2, 2, 1e9)}} (based on previous effect)</p>
+    <p>Base Effect Formula: (log<sub>2</sub>(x+1)+1)<sup>1.25</sup></p>
+    <p>Current Effect Formula: (log<sub>2</sub>(x+1)+1)<sup>{{formatNumber(functions.getNumberSoftcap2Expo(), 2, 2, 1e9)}}</sup></p>
     </div>
     <div v-else>
     </div>
@@ -135,6 +170,42 @@ Vue.component("functions-layer", {
     </div>
     </div>
 
+    <div v-if="Enhancer1">
+    <h3>Enhancers</h3>
+    <div class="upgrades">
+    <functions-upgrade :upgrade="functions.upgrades.EnhanceRMBOL"></functions-upgrade>
+    <functions-upgrade :upgrade="functions.upgrades.EnhanceSF"></functions-upgrade>
+    </div>
+    </div>
+    <div v-else>
+    </div>
+
+    <div v-if="Enhancer2">
+    <div class="upgrades">
+    <functions-upgrade :upgrade="functions.upgrades.EnhanceMLC"></functions-upgrade>
+    <functions-upgrade :upgrade="functions.upgrades.EnhanceCD"></functions-upgrade>
+    </div>
+    </div>
+    <div v-else>
+    </div>
+
+    <div v-if="Enhancer3">
+    <div class="upgrades">
+    <functions-upgrade :upgrade="functions.upgrades.EnhanceRMBOf"></functions-upgrade>
+    <functions-upgrade :upgrade="functions.upgrades.EnhanceMFP"></functions-upgrade>
+    </div>
+    </div>
+    <div v-else>
+    </div>
+
+    <div v-if="Enhancer4">
+    <div class="upgrades">
+    <functions-upgrade :upgrade="functions.upgrades.EnhanceVCD"></functions-upgrade>
+    <functions-upgrade :upgrade="functions.upgrades.EnhanceUN"></functions-upgrade>
+    </div>
+    </div>
+    <div v-else>
+    </div>
 </div>
 </div>`
 });
