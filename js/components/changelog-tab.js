@@ -1,6 +1,11 @@
 Vue.component("changelog-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title>v1.6.1 - Fix</template>
+    <template v-slot:text>- ^0 Resource Multiplier Boost Fixed (thanks person#2629)<br>- Endgame: Layer 1e535<br> - New content coming soon...
+    </template>
+    </guide-item>
+    <guide-item>
     <template v-slot:title>v1.6 - Meta Enhance</template>
     <template v-slot:text>- Attempt 3 on Fixing NaN Bug in Meta (LoL)<br>- Add more upgrades in the restack tree<br>- Add 5 Achievements Total: 97 Achievements<br>- Endgame: Layer 1e535<br> - New content coming soon...
     </template>
