@@ -167,7 +167,7 @@ class FunctionsLayer
             ),
             EnhanceRMBOf: new FunctionsUpgrade("Multiply Functions gain and raise RMs by ln([Fifth Function's Effect]), Raise Layer Coins gain to <b>&gamma;</b>",
             level => (game.achievements[92].isCompleted) ? [new Decimal ("4.8e975"), Decimal.dInf][level.toNumber()] : Decimal.dInf,
-            level => Decimal.pow(this.upgrades.ResourceMultipliersBasedOnfx.apply().ln(), level.min(1)),
+            level => Decimal.pow(this.upgrades.ResourceMultipliersBasedOnfx.apply().max(1).ln().max(1), level.min(1)),
             {
                 maxLevel: new Decimal (1),
                 getEffectDisplay: effectDisplayTemplates.numberStandard(3, "")}
