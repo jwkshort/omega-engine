@@ -105,7 +105,7 @@ class FunctionsLayer
             level => this.getFunctionsValue().add(1).log10().add(1).ln().add(1).pow(level.pow(0.4)),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "x")}
             ),
-            NumberLimit: new FunctionsUpgrade("Increase the Number Limit (Can be only bought when your number is capped)",
+            NumberLimit: new FunctionsUpgrade("Increase the Number Limit",
             level => (game.functionsLayer.number.gte(this.getNumberLimit())||this.upgrades.NumberLimit2.level.gte(1)) ? new Decimal ("1.8e308").mul(Decimal.pow(1e20, level)).mul(Decimal.pow(1e5, (level.sub(1).max(0).mul(level.max(0))).div(2))) : Decimal.dInf,
             level => Decimal.pow(1.1, level.pow(0.6)),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")}
@@ -120,7 +120,7 @@ class FunctionsLayer
             level => Decimal.pow(0.9, level.pow(0.6)),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")}
             ),
-            NumberLimit2: new FunctionsUpgrade("Your highest layer increases the number limit base and the 3rd number upgrade can be bought anytime",
+            NumberLimit2: new FunctionsUpgrade("Your highest layer increases the number limit base",
             level => (this.upgrades.UnlockNumber.level.gte(1)&&game.achievements[76].isCompleted) ? new Decimal ("4.04e404").mul(Decimal.pow(1e5, (level.sub(1).max(0)).mul(level.sub(2).max(0)).div(2))).mul(Decimal.pow(1e30, level)) : Decimal.dInf,
             level => Decimal.pow(game.highestLayer.pow(0.125).add(1), level.pow(0.6)),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "x")}

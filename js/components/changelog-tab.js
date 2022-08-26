@@ -1,8 +1,13 @@
 Vue.component("changelog-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title>v1.6.2 - NaN Fix</template>
+    <template v-slot:text>- NaN Bug Fixed (epic)<br>- Changed Generator Names<br>- You Can Buy 3rd Number Upgrade Anytime now<br>- Endgame: Layer 1e535<br> - New content coming soon...
+    </template>
+    </guide-item>
+    <guide-item>
     <template v-slot:title>v1.6.1 - Fix</template>
-    <template v-slot:text>- ^0 Resource Multiplier Boost Fixed (thanks person#2629)<br>- Endgame: Layer 1e535<br> - New content coming soon...
+    <template v-slot:text>- ^0 Resource Multiplier Boost Bug Fixed (thanks person#2629)<br>- Endgame: Layer 1e535<br> - New content coming soon...
     </template>
     </guide-item>
     <guide-item>

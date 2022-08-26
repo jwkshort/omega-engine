@@ -1,7 +1,7 @@
 var mod = {
     primaryName: "ΩL",
     secondaryName: " EZ",
-    version: "1.6",
+    version: "1.6.2",
     engineVer: "0.2.3", //DO NOT MODIFY
     debugMode: false,
     themes: [
@@ -38,25 +38,25 @@ var mod = {
             "01",
             "2345"
         ]],
-        ["Morse code",
+        ["Morse code (JeehanMoment)",
         [
             [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."],
             ["-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----."],
             ["..--..", ".-...", "........", "...-."]
         ]],
-        ["Wingdings",
+        ["Wingdings (JeehanMoment)",
         [
             '♋♌♍♎♏♐♑♒♓🙰🙵●🔾■□🞐❑❒⬧⧫◆❖⬥⌧⮹⌘',
             "📁📂📄🗏🗐🗄⌛🖮🖰🖲",
             "✌👌👍👎"
         ]],
-        ["Unary (Jeehan's meme names)",
+        ["Unary (JeehanMoment)",
         [
             '1',
             "1",
             "2345"
         ]],
-        ["Who's on first?",
+        ["Who's on first? (JeehanMoment)",
         [
             ["YES", "FIRST", "DISPLAY", "OKAY", "SAYS", "NOTHING", "", "BLANK", "NO", "LED", "LEAD", "READ", "RED", "REED", "LEED", "HOLD ON", "YOU", "YOU ARE", "YOUR", "YOU'RE", "UR", "THERE", "THEY'RE", "THEIR", "THEY ARE", "SEE", "C", "CEE"],
             ["READY", "FIRST", "NO", "BLANK", "NOTHING", "YES", "WHAT", "UHHH", "LEFT", "RIGHT", "MIDDLE", "OKAY", "WAIT", "PRESS", "YOU", "YOU'RE", "UR", "U", "UH HUH", "UH UH", "WHAT?", "DONE", "NEXT", "HOLD", "SURE", "LIKE"],
