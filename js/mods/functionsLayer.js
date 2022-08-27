@@ -106,7 +106,7 @@ class FunctionsLayer
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "x")}
             ),
             NumberLimit: new FunctionsUpgrade("Increase the Number Limit",
-            level => (game.functionsLayer.number.gte(this.getNumberLimit())||this.upgrades.NumberLimit2.level.gte(1)) ? new Decimal ("1.8e308").mul(Decimal.pow(1e20, level)).mul(Decimal.pow(1e5, (level.sub(1).max(0).mul(level.max(0))).div(2))) : Decimal.dInf,
+            level => new Decimal ("1.8e308").mul(Decimal.pow(1e20, level)).mul(Decimal.pow(1e5, (level.sub(1).max(0).mul(level.max(0))).div(2))),
             level => Decimal.pow(1.1, level.pow(0.6)),
             {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")}
             ),
