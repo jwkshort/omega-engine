@@ -309,7 +309,7 @@ const functions = {
                 const settings = JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem(mod.primaryName+mod.secondaryName+"_Settings"+game.settings.saveInfo)))));
                 settings.saveInfo = game.settings.saveInfo
                 game.settings = Object.assign(game.settings, settings);
-                game.settings.tab = "Layers"
+                game.settings.tab = "Achievements"
             }
             catch(e)
             {
