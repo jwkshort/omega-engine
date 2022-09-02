@@ -12,18 +12,13 @@ const computed = {
         category = null
         switch(game.settings.tab)
         {
-            case "Layers":
-            case "Automators":
-            case "Volatility":
-            case "Aleph":
-            case "ReStack":
-                category = "Layers";
-                break;
             case "Guide":
             case "Changelog":
             case "Engine Changelog":
                 category = "Guide";
                 break;
+            case "Aleph":
+            case "ReStack":
             case "Achievements":
             case "Secret Achievements":
                 category = "Achievements";
