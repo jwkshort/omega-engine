@@ -103,7 +103,7 @@ const game = {
     notifications: [],
     timeSpent: 0,
     settings: {
-        tab: "Layers",
+        tab: "Achievements",
         showAllLayers: true,
         showMinLayers: 5,
         showMaxLayers: 5,
