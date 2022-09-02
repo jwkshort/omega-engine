@@ -1,4 +1,4 @@
-Vue.component("restack-locked-button", {
+Vue.component("achievement-locked-button", {
     props: ["achievements"],
     methods: {
         completedAchievements: () => game.achievements.filter(ach => ach.isCompleted)
