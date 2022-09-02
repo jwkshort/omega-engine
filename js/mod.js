@@ -1,6 +1,6 @@
 const mod = {
-    primaryName: "ω",
-    secondaryName: "Engine",
+    primaryName: "Ω",
+    secondaryName: " Non-layers",
     version: "1.0.0",
     engineVer: "1.0.0", //DO NOT MODIFY
     debugMode: false,
