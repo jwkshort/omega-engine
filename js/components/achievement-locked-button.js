@@ -5,6 +5,6 @@ Vue.component("achievement-locked-button", {
     },
     template: `<button @click="$emit('click')" :disabled="completedAchievements() < achievements">
     <span v-if="completedAchievements() < achievements">Reach {{achievements}}<img alt="LC" class="inline" src="images/star.svg"/></span>
-    <span v-else><slot></slot></span>
+    <span v-else><slot></slot>{{achievements}}{{completedAchievements()}}</span>
 </button>`
 })
