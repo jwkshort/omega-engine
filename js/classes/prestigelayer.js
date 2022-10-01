@@ -141,9 +141,9 @@ class PrestigeLayer
         if(this.hasGenerators())
         {
             const bonus = game.layers[this.layer + 1] && game.layers[this.layer + 1].timesReset > 0 ? this.generators[0].getProductionMulti() : new Decimal(0);
-            return Decimal.max(1, (this.generators[0].getProductionPS().div(10)).add(bonus).round());
+            return Decimal.max(0.2, (this.generators[0].getProductionPS().div(10)).add(bonus).round());
         }
-        return new Decimal(1);
+        return new Decimal(0.2);
     }
 
     hasGenerators()
@@ -156,7 +156,7 @@ class PrestigeLayer
         this.generators = [];
         for(let i = 0; i < 10; i++)
         {
-            const baseProd = i === 0 ? new Decimal(1) : new Decimal(0.2);
+            const baseProd = i === 0 ? new Decimal(0.2) : new Decimal(0.05);
             this.generators.push(new Generator(this, i, i > 0 ? this.generators[i - 1] : null, i,
                 Decimal.pow(10, i + 1 + Math.max(0, i - 3) + Math.max(0, i - 6)), Decimal.pow(10, i + 3 + Math.max(0, i - 2)), baseProd));
         }
@@ -275,7 +275,7 @@ class PrestigeLayer
         {
             const rand = new Random(this.layer * (i + 1));
             const bpMult = 0.2 + 0.6 * rand.nextDouble();
-            const baseProd = new Decimal(0.02);
+            const baseProd = new Decimal(0.005);
             this.powerGenerators.push(new PowerGenerator(this, i, i > 0 ? this.powerGenerators[i - 1] : null,
                 "P<sub>" + i + "</sub>",
                 Decimal.pow(10, Decimal.pow(2, i)).mul(bpMult).floor(), Decimal.pow(10, Decimal.pow(2, i).add(1)), baseProd));
