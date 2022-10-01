@@ -179,7 +179,7 @@ class PrestigeLayer
             let bp = Decimal.pow(bpGrowth, Math.pow(this.layer !== 0 ? 1.5 : 1.75, i + (this.layer === 0 ? 2 : 0)) - 1);
             if(this.layer === 0)
             {
-                bp = bp.mul(2.5e8);
+                bp = bp.mul(2.5e4);
             }
             bp = Decimal.round(bp.mul(2 + 6 * rand.nextDouble()));
             const upgTypes = FeatureUnlockManager.getUpgradeTypes(this.layer);
