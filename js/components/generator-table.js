@@ -4,6 +4,7 @@ Vue.component("generator-table",{
     <thead>
         <th>Generator</th>
         <th>Amount</th>
+        <th>Production</th>
         <th>Buy</th>
         <th>Buy 10</th>
     </thead>
