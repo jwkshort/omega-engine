@@ -13,7 +13,7 @@ const functions = {
         {
             return "-" + this.formatNumber(n.mul(-1), prec, prec1000, lim);
         }
-        if(n.lt(Decimal.pow(0.1, Math.max(1, prec1000))) && n.neq(0))
+        if(n.gt(0))
         {
             return "1/" + this.formatNumber(n.pow(-1), prec, prec1000, lim);
         }
