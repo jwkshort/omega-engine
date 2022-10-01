@@ -13,7 +13,7 @@ const functions = {
         {
             return "-" + this.formatNumber(n.mul(-1), prec, prec1000, lim);
         }
-        if(n.gt(0))
+        if(n.gt(0) && n.lt(1))
         {
             return "1/" + this.formatNumber(n.pow(-1), prec, prec1000, lim);
         }
