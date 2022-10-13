@@ -1,6 +1,12 @@
 Vue.component("changelog-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title>v1.7 - ENHANCED</template>
+    <template v-slot:text>- Add 14 more enhancers<br>- New Themes and Fonts and Layers Names<br>-Changed u91<br>-Expect Some Bugs or Lag<br>- Change Precisions to 3 instead of 2<br> Endgame: Layer 8.080e808<br> - New content coming soon...
+    </template>
+    </guide-item>
+    <guide-item>
+    <guide-item>
     <template v-slot:title>v1.6.2 - NaN Fix</template>
     <template v-slot:text>- NaN Bug Fixed (epic)<br>- Changed Generator Names<br>- You Can Buy 3rd Number Upgrade Anytime now<br>- Endgame: Layer 1e535<br> - New content coming soon...
     </template>
