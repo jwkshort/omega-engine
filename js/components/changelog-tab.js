@@ -6,7 +6,6 @@ Vue.component("changelog-tab", {
     </template>
     </guide-item>
     <guide-item>
-    <guide-item>
     <template v-slot:title>v1.6.2 - NaN Fix</template>
     <template v-slot:text>- NaN Bug Fixed (epic)<br>- Changed Generator Names<br>- You Can Buy 3rd Number Upgrade Anytime now<br>- Endgame: Layer 1e535<br> - New content coming soon...
     </template>
