@@ -4,15 +4,15 @@ Vue.component("resource-upgrade", {
         canAfford: function ()
         {
             if(this.upgrade.level.eq(this.upgrade.maxLevel)) return true;
-            return this.upgrade.currentPrice().lte(this.upgrade.getResource());
+            return (this.upgrade.currentPrice()).lte(this.upgrade.getResource());
         },
         maxed: function()
         {
-            return this.upgrade.level.eq(this.upgrade.maxLevel);
+            return (this.upgrade.level).eq(this.upgrade.maxLevel);
         },
         isUnlocked: function()
         {
-            return this.upgrade.isBuyable === undefined || (this.upgrade.isBuyable());
+            return (this.upgrade.isBuyable === undefined) || (this.upgrade.isBuyable());
         }
     },
     template: `<button :disabled="!canAfford || !isUnlocked" @click="upgrade.buy()" class="upgrade" :class="{maxed: maxed}">

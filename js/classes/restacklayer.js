@@ -46,7 +46,7 @@ class ReStackLayer
         this.metaUpgrade = new RestackLayerUpgrade("All your Layer Resources are multiplied each second",
             level => new Decimal(1e10).mul(Decimal.pow(8, level)).mul(Decimal.pow(1.25, level.pow(1.25))),
             level => Decimal.pow(Decimal.add(1, Decimal.mul(level, 0.1)), level.add(1).log(2).add(1)).mul(level.add(1)),
-            {getEffectDisplay: effectDisplayTemplates.numberStandard(2, "x")})
+            {getEffectDisplay: effectDisplayTemplates.numberStandard(3, "x")})
         this.upgradeTree = [
             [
                 new RestackLayerUpgrade("u11:Increase the <b>Resource Multiplier</b>",
@@ -59,19 +59,19 @@ class ReStackLayer
             [
                 new RestackLayerUpgrade("u21:<b>Resource Multipliers</b> are stronger",
                     level => new Decimal(1e40).pow(Decimal.pow(5, level)),
-                    level => Decimal.pow(5, level.pow(0.6)),{
+                    level => Decimal.pow(5, level.max(game.functionsLayer.upgrades.EnhanceVar_delta.level.gte(1) ? 5 : 0).pow(0.6)),{
                         maxLevel: 5,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")
                     }),
                 new RestackLayerUpgrade("u22:Gain a Boost to <b>Resource Multipliers</b> but weaker based on time you buy last <b>Resource Upgrades</b> or <b>Restack</b>",
                     level => new Decimal(1e40).pow(Decimal.pow(5, level)),
-                    level => new Decimal(1).mul(Decimal.div(new Decimal(4).pow(level.pow(0.6)).mul(level), Decimal.pow(Decimal.add(this.u22Time, 1).log2().add(1), Decimal.div(1, level.add(1).pow(0.6))))).max(1), {
+                    level => new Decimal(1).mul(Decimal.div(new Decimal(4).pow(level.max(game.functionsLayer.upgrades.EnhanceVar_delta.level.gte(1) ? 5 : 0).pow(0.6)).mul(level.max(game.functionsLayer.upgrades.EnhanceVar_delta.level.gte(1) ? 5 : 0)), Decimal.pow(Decimal.add(Decimal.mul(this.u22Time, game.functionsLayer.upgrades.EnhanceVar_delta.level.gte(1) ? 0 : 1), 1).log2().add(1), Decimal.div(1, level.max(game.functionsLayer.upgrades.EnhanceVar_delta.level.gte(1) ? 5 : 0).add(1).pow(0.6))))).max(1), {
                         maxLevel: 5,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")
                     }),
                 new RestackLayerUpgrade("u23:<b>Resource Multiplier</b> Upgrades are stronger based on time spent this <b>ReStack</b>",
                 level => new Decimal(1e40).pow(Decimal.pow(5, level)),
-                level => new Decimal(1).add(Decimal.pow(2.5, level.pow(0.6)).sub(1).mul(this.timeSpent / 256)),{
+                level => new Decimal(1).add(Decimal.pow(2.5, level.max(game.functionsLayer.upgrades.EnhanceVar_delta.level.gte(1) ? 5 : 0).pow(0.6)).sub(1).mul(this.timeSpent / 256)),{
                         maxLevel: 5,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")
                     })
@@ -90,19 +90,19 @@ class ReStackLayer
             [
                 new RestackLayerUpgrade("u41:<b>Resource Powerers</b> are stronger",
                     level => new Decimal("1e1800").pow(Decimal.pow(16, level)),
-                    level => new Decimal(1).add(level.pow(0.5).mul(0.03)), {
+                    level => new Decimal(1).add(level.max(game.functionsLayer.upgrades.EnhanceVar_epsilon.level.gte(1) ? 5 : 0).pow(0.5).mul(0.03)), {
                         maxLevel: 5,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")
                     }),
                 new RestackLayerUpgrade("u42:<b>Resource Multipliers</b>' Cost Scaling start later",
                     level => new Decimal("1e2500").pow(Decimal.pow(16, level)),
-                    level => level, {
+                    level => level.max(game.functionsLayer.upgrades.EnhanceVar_epsilon.level.gte(1) ? 5 : 0), {
                         maxLevel: 5,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(3, "+")
                     }),
                 new RestackLayerUpgrade("u43:<b>Resource Multipliers</b> are stronger",
                     level => new Decimal("1e1350").pow(Decimal.pow(16, level)),
-                    level => new Decimal(1).add(level.pow(0.5).mul(3)), {
+                    level => new Decimal(1).add(level.max(game.functionsLayer.upgrades.EnhanceVar_epsilon.level.gte(1) ? 5 : 0).pow(0.5).mul(3)), {
                         maxLevel: 5,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")
                     })
@@ -121,19 +121,19 @@ class ReStackLayer
             [
                 new RestackLayerUpgrade("u61:<b>Resource Powerers</b> are stronger",
                     level => new Decimal("1ee10").pow(Decimal.pow(1024, level)),
-                    level => new Decimal(1).add(level.pow(0.4)), {
+                    level => new Decimal(1).add(level.max(game.functionsLayer.upgrades.EnhanceVar_zeta.level.gte(1) ? 5 : 0).pow(0.4)), {
                         maxLevel: 5,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(3, "x")
                     }),
                 new RestackLayerUpgrade("u62:Gain free levels to all <b>Resource Multipliers</b>",
                     level => new Decimal("1ee10").pow(Decimal.pow(1024, level)),
-                    level => new Decimal(25).mul(level.pow(0.4)).floor(), {
+                    level => new Decimal(25).mul(level.max(game.functionsLayer.upgrades.EnhanceVar_zeta.level.gte(1) ? 5 : 0).pow(0.4)).floor(), {
                         maxLevel: 5,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(3, "+")
                     }),
                 new RestackLayerUpgrade("u63:<b>Resource Multipliers</b> scale better to their level",
                     level => new Decimal("1ee10").pow(Decimal.pow(1024, level)),
-                    level => new Decimal(1).add(level.pow(0.4).mul(0.02)), {
+                    level => new Decimal(1).add(level.max(game.functionsLayer.upgrades.EnhanceVar_zeta.level.gte(1) ? 5 : 0).pow(0.4).mul(0.02)), {
                         maxLevel: 5,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")
                     }),
@@ -152,31 +152,31 @@ class ReStackLayer
             [
                 new RestackLayerUpgrade("u81:<b>Resource Powerers</b> are stronger based on <b>Layer coins</b>",
                     level => new Decimal("1ee308").pow(Decimal.pow(1e20, level).mul(Decimal.pow(1e5, level.pow(1.25)))),
-                    level => new Decimal (1).add(Decimal.mul(game.restackLayer.layerCoins.add(1).log(10).add(1).log(10).add(1).log(10).div(15), Decimal.max(0, level).pow(0.6))), {
+                    level => new Decimal (1).add(Decimal.mul(game.restackLayer.layerCoins.add(1).log(10).add(1).log(10).add(1).log(10).div(15), Decimal.max(0, level.max(game.functionsLayer.upgrades.EnhanceVar_eta.level.gte(1) ? 5 : 0)).pow(0.6))), {
                         maxLevel: 5,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(3, "x")
                     }),
                 new RestackLayerUpgrade("u82:Gain more <b>Layer coins</b> based on <b>Layer coins</b>",
                     level => new Decimal("1ee308").pow(Decimal.pow(1e20, level).mul(Decimal.pow(1e5, level.pow(1.25)))),
-                    level => new Decimal (1).add(Decimal.mul(game.restackLayer.layerCoins.add(1).log(10).add(1).log(10).add(1).log(10).mul(3), Decimal.max(0, level).pow(0.6))), {
+                    level => new Decimal (1).add(Decimal.mul(game.restackLayer.layerCoins.add(1).log(10).add(1).log(10).add(1).log(10).mul(3), Decimal.max(0, level.max(game.functionsLayer.upgrades.EnhanceVar_eta.level.gte(1) ? 5 : 0)).pow(0.6))), {
                         maxLevel: 5,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")
                     }),
                 new RestackLayerUpgrade("u83:<b>Resource Multipliers</b> are stronger based on <b>Layer coins</b>",
                     level => new Decimal("1ee308").pow(Decimal.pow(1e20, level).mul(Decimal.pow(1e5, level.pow(1.25)))),
-                    level => new Decimal (1).add(Decimal.mul(game.restackLayer.layerCoins.add(1).log(10).add(1).log(10).add(1).log(10).div(40), Decimal.max(0, level).pow(0.6))), {
+                    level => new Decimal (1).add(Decimal.mul(game.restackLayer.layerCoins.add(1).log(10).add(1).log(10).add(1).log(10).div(40), Decimal.max(0, level.max(game.functionsLayer.upgrades.EnhanceVar_eta.level.gte(1) ? 5 : 0)).pow(0.6))), {
                         maxLevel: 5,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(3, "^")
                     }),
             ],
             [
-                new RestackLayerUpgrade("u91: MLZMDTVMFKIFPW",
+                new RestackLayerUpgrade("u91: When Buying Resources Upgrades They don't Deduct anything",
                     level => new Decimal("1ee555.55"),
                     level => level.gt(0), {
                         maxLevel: 1,
                         getEffectDisplay: function()
                         {
-                            return this.level.gt(0) ? "The end?" : "...";
+                            return this.level.gt(0) ? "Unlocked" : "Locked";
                         }
                     }),
             ]
@@ -214,7 +214,7 @@ class ReStackLayer
             resourcePowerersStrength2: this.upgradeTree[7][0],
             extraLayerCoins: this.upgradeTree[7][1],
             resourceMultiplierUpgrades3: this.upgradeTree[7][2],
-            mysteriousUpgrade: this.upgradeTree[8][0]
+            costsNothing: this.upgradeTree[8][0]
         };
     }
 
@@ -313,8 +313,8 @@ class ReStackLayer
         }
         if(game.metaLayer.active)
         {
-            game.metaLayer.layer = new Decimal(0);
-            game.metaLayer.resource = new Decimal(1);
+            game.metaLayer.layer = game.functionsLayer.upgrades.Enhancefx.level.gte(1) ? game.metaLayer.layer : new Decimal(1);
+            game.metaLayer.resource = game.functionsLayer.upgrades.Enhancefx.level.gte(1) ? game.metaLayer.resource : new Decimal(1);
         }
         game.highestUpdatedLayer = new Decimal(0);
         game.alephLayer = new AlephLayer();
@@ -344,6 +344,7 @@ class ReStackLayer
     {
         this.timeSpent += dt;
         this.u22Time += dt;
+        game.restackLayer.layerCoins = game.functionsLayer.upgrades.EnhanceVar.level.gte(1) ? (this.layerCoins.add(this.getRestackGain().mul(dt))) : this.layerCoins
     }
 
     load(obj)

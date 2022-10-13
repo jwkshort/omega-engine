@@ -1,0 +1,8 @@
+@font-face{
+    font-family: depixel-hbf;
+    src: url('../../fonts/DePixelHalbfett.ttf');
+}
+
+:root{
+    --primary-font: depixel-hbf
+}

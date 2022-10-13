@@ -1,7 +1,7 @@
 const UPGRADE_RESOURCE = 0, UPGRADE_GENERATOR = 1, UPGRADE_GENMULTI = 2, UPGRADE_POWERGENERATOR = 3, UPGRADE_PRESTIGEREWARD = 4,
     UPGRADE_RESOURCE_TIMELAYER = 5, UPGRADE_GENERATOR_TIMELAYER = 6, UPGRADE_POWERGENERATOR_TIMELAYER = 7;
 
-const RESOURCE_ALEPH = 0, RESOURCE_LAYERCOINS = 1, RESOURCE_FUNCTIONS_POINTS = 2
+const RESOURCE_ALEPH = 0, RESOURCE_LAYERCOINS = 1, RESOURCE_FUNCTIONS_POINTS = 2, RESOURCE_FUNCTIONS_NUMBER = 3
 
 class AbstractUpgrade
 {
@@ -37,10 +37,10 @@ class AbstractUpgrade
     {
         if(this.level.eq(this.maxLevel))
         {
-            return "x" + functions.formatNumber(this.apply(), 2, 2);
+            return "x" + functions.formatNumber(this.apply(), 3, 3);
         }
-        return "x" + functions.formatNumber(this.getEffect(this.level), 2, 2) + " 🠚 " +
-            "x" + functions.formatNumber(this.getEffect(this.level.add(1)), 2, 2);
+        return "x" + functions.formatNumber(this.getEffect(this.level), 3, 3) + " 🠚 " +
+            "x" + functions.formatNumber(this.getEffect(this.level.add(1)), 3, 3);
     }
 
     getPriceDisplay()
@@ -49,7 +49,7 @@ class AbstractUpgrade
         {
             return "Max";
         }
-        return functions.formatNumber(this.currentPrice(), 2, 0, 1e9);
+        return functions.formatNumber(this.currentPrice(), 3, 0, 1e9);
     }
 
     isUnlocked()
@@ -288,6 +288,40 @@ class DynamicfunctionsUpgrade extends LayerUpgrade
     }
 }
 
+class DynamicNumberUpgrade extends LayerUpgrade
+{
+    constructor(getCost, getDescription, getPrice, getEffect, cfg)
+    {
+        super(null, null, getPrice, getEffect, null, cfg);
+        this.getCost = getCost;
+        this.description = getDescription(this);
+    }
+    buy()
+    {
+        if(!this.isBuyable()) return;
+        if(game.functionsLayer.number.gte(this.getPrice))
+        {
+            game.functionsLayer.number = game.functionsLayer.number.div(this.getPrice).max(1);
+            this.level = this.level.add(1);
+        }
+    }
+
+    buyMax()
+    {
+        if(!this.isBuyable()) return;
+        const oldLvl = new Decimal(this.level);
+        this.level = new Decimal(Utils.determineMaxLevel(this.currentCostLayer().resource, this));
+        if(this.level.sub(oldLvl).gt(0) && this.level.lt(1e9))
+        {
+            this.currentCostLayer().resource = this.currentCostLayer().resource.div(this.getPrice(this.level.sub(1)));
+        }
+        while(this.currentPrice().lte(this.currentCostLayer().resource) && this.level.lt(1e9) && this.level.lt(this.maxLevel))
+        {
+            this.buy();
+        }
+    }
+}
+
 class ResourceUpgrade extends AbstractUpgrade
 {
     constructor(description, getPrice, getEffect, resource, cfg)
@@ -314,6 +348,9 @@ class ResourceUpgrade extends AbstractUpgrade
     {
         switch(this.resource)
         {
+            case RESOURCE_FUNCTIONS_NUMBER:
+                game.functionsLayer.number = game.functionsLayer.number.div(res);
+                break;
             case RESOURCE_FUNCTIONS_POINTS:
                 game.functionsLayer.functionsPoints = game.functionsLayer.functionsPoints.sub(res);
                 break;
@@ -368,6 +405,14 @@ class FunctionsUpgrade extends ResourceUpgrade
     }
 }
 
+class NumberUpgrade extends ResourceUpgrade
+{
+    constructor(description, getPrice, getEffect, cfg)
+    {
+        super(description, getPrice, getEffect, RESOURCE_FUNCTIONS_NUMBER, cfg);
+    }
+}
+
 class RestackLayerUpgrade extends ResourceUpgrade
 {
     constructor(description, getPrice, getEffect, cfg)
@@ -402,7 +447,7 @@ class MetaDynamicLayerUpgrade extends AbstractUpgrade
         if(canBuy)
         {
             game.restackLayer.u22Time = 0
-            game.metaLayer.layer = game.restackLayer.upgradeTreeNames.substractLayers.apply() ? game.metaLayer.layer.sub(this.currentLayer()) : new Decimal(0);
+            game.metaLayer.layer = game.restackLayer.upgradeTreeNames.costsNothing.apply() ? game.metaLayer.layer : (game.restackLayer.upgradeTreeNames.substractLayers.apply() ? game.metaLayer.layer.sub(this.currentLayer()) : new Decimal(0));
             game.metaLayer.resource = new Decimal(1);
             this.level = this.level.add(1);
         }
@@ -455,8 +500,8 @@ const effectDisplayTemplates = {
     {
         return function()
         {
-            const thisVal = this.level.eq(0) ? "Inactive" : this.apply().toFixed(2) + " s";
-            const nextVal = this.getEffect(this.level.add(1)).toFixed(2) + " s";
+            const thisVal = this.level.eq(0) ? "Inactive" : this.apply().toFixed(3) + " s";
+            const nextVal = this.getEffect(this.level.add(1)).toFixed(3) + " s";
             if(this.level.eq(this.maxLevel))
             {
                 return thisVal;

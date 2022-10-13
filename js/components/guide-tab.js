@@ -106,7 +106,7 @@ Vue.component("guide-tab", {
     </guide-item>
     <guide-item v-if="numberUnlocked">
         <template v-slot:title>Number</template>
-        <template v-slot:text>Number is a currency that is increasing every second which boosts functions points gain even more, But it cannot exceed the number limit.<br> You can use your functions points to increase the number faster or extend its own limit.
+        <template v-slot:text>Number is a currency that is increasing every second which boosts functions points gain even more, But it cannot exceed the number limit.<br> You can use your functions points to increase the number faster or extend its own limit.<br>Buying a number upgrade divides number instead of subtracting it
         </template>
     </guide-item>
 </div>`

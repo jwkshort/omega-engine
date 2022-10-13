@@ -17,10 +17,10 @@ const computed = {
             case "Volatility":
             case "Aleph":
             case "Restack":
-                category = "Layers";
+                category = "Layers"
                 break;
             case "Functions":
-                category = "Layers";
+                category = "Layers"
                 break;
             case "Guide":
             case "Changelog":
@@ -40,5 +40,8 @@ const computed = {
                 break;
         }
         return category
+    },
+    secretAchUnlock: function() {
+        return game.secretAchievements.filter(ach => ach.isCompleted).length > 0
     },
 };

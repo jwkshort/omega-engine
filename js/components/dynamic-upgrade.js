@@ -14,5 +14,6 @@ Vue.component("dynamic-upgrade", {
 <upgrade v-if="!isResourceUpgrade" :upgrade="upgrade"></upgrade>
 <aleph-upgrade v-else-if="upgradeType === 'AlephUpgrade'" :upgrade="upgrade"></aleph-upgrade>
 <restack-upgrade v-else-if="upgradeType === 'RestackLayerUpgrade'" :upgrade="upgrade"></restack-upgrade>
-<functions-upgrade v-else-if="upgradeType === 'FunctionsUpgrade'" :upgrade="upgrade"></functions-upgrade>`
+<functions-upgrade v-else-if="upgradeType === 'FunctionsUpgrade'" :upgrade="upgrade"></functions-upgrade>
+<number-upgrade v-else-if="upgradeType === 'NumberUpgrade'" :upgrade="upgrade"></number-upgrade>`
 });

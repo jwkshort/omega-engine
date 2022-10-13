@@ -77,7 +77,7 @@ class PrestigeLayer
         }
         if(layer instanceof Decimal && layer.gte(Infinities[2]) && !layer.gte(Infinities[3]))
         {
-            const infinityOrder = Decimal.log(layer, Infinities[2]).floor();
+            const infinityOrder = Decimal.log(layer, mod.Infinities[2]).floor();
             if(infinityOrder.gte(6))
             {
                 const exp = PrestigeLayer.getNameForLayer(layer.div(Decimal.pow(Infinities[2], infinityOrder)).floor().sub(1));
@@ -515,14 +515,14 @@ class PrestigeLayer
 
     getExponentialBoostFactor()
     {
-        return game.alephLayer.upgrades.layerExponentialBoost.apply() + game.restackLayer.permUpgrades.layerExponentialBoostFactor.apply()
-            + game.restackLayer.permUpgrades.layerExponentialBoostFactorTime.apply();
+        return new Decimal(game.alephLayer.upgrades.layerExponentialBoost.apply() + game.restackLayer.permUpgrades.layerExponentialBoostFactor.apply()
+            + game.restackLayer.permUpgrades.layerExponentialBoostFactorTime.apply());
     }
 
     //the factor of how much the power on the prestige formula is
     static getPrestigeCarryOverForLayer(layer)
     {
-        return 24 * Math.pow(1.1, Utils.clamp(layer - 2, 0, 5));
+        return new Decimal(24 * Math.pow(1.1, Utils.clamp(layer - 2, 0, 5)));
     }
 
     getPrestigeCarryOver()

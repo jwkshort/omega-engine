@@ -1,0 +1,8 @@
+@font-face{
+    font-family: teoran;
+    src: url('../../fonts/teoran.ttf');
+}
+
+:root{
+    --primary-font: teoran
+}

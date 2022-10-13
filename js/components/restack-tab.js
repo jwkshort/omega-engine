@@ -23,8 +23,8 @@ Vue.component("restack-tab", {
         formatNumber: (n, prec, prec1000, lim) => functions.formatNumber(n, prec, prec1000, lim)
     },
     template: `<div class="restack-tab">
-<button class="restack-2" @click="restack.restack()" :disabled="!canRestack" v-if="isMeta">+{{formatNumber(restack.getRestackGain(), 2, 0)}} <img alt="LC" class="inline" src="images/layercoin.png"/></button>
-<p>You have <span class="big-number">{{formatNumber(restack.layerCoins, 2, 0)}}</span> <img alt="LC" class="inline" src="images/layercoin.png"/></p>
+<button class="restack-2" @click="restack.restack()" :disabled="!canRestack" v-if="isMeta">+{{formatNumber(restack.getRestackGain(), 3, 0)}} <img alt="LC" class="inline" src="images/layercoin.png"/></button>
+<p>You have <span class="big-number">{{formatNumber(restack.layerCoins, 3, 0)}}</span> <img alt="LC" class="inline" src="images/layercoin.png"/></p>
 <button v-if="!restack.allPermUpgradesBought() && !isMeta" @click="restack.respecPermUpgrades()">Respec: get your spent <img alt="LC" class="inline" src="images/layercoin.png"/> back, and do a ReStack without reward</button>
 <h4 v-if="!isMeta">Permanent Upgrades</h4>
 <div v-if="!isMeta" class="upgrades">

@@ -91,13 +91,13 @@ Vue.component("prestige-layer", {
         },
     template: `<div class="prestige-layer">
 <resource-display :layer="layer"></resource-display>
-<p v-if="layer.hasSimpleBoost()" class="power-text">This translates to a <span class="big-number">x{{formatNumber(layer.getSimpleBoost(), 2, 2)}}</span> Boost on Layer 1 Production</p>
-<div class="resource-button" v-if="layer.hasResourceButton"><button @click="layer.addResource(layer.getResourceButtonAmount())">+{{formatNumber(layer.getResourceButtonAmount(), 2, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name></button></div>
+<p v-if="layer.hasSimpleBoost()" class="power-text">This translates to a <span class="big-number">x{{formatNumber(layer.getSimpleBoost(), 3, 3)}}</span> Boost on Layer 1 Production</p>
+<div class="resource-button" v-if="layer.hasResourceButton"><button @click="layer.addResource(layer.getResourceButtonAmount())">+{{formatNumber(layer.getResourceButtonAmount(), 3, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name></button></div>
 <button v-if="nextLayer && (layer.canGenerateNextLayer() || nextLayer.timesReset > 0)" :disabled="!layer.canPrestige()" class="prestige" @click="layer.prestige()">
-    <span v-if="layer.isNonVolatile()">+{{formatNumber(layer.getPrestigeAmountPerSecond(), 2, 2)}} <resource-name :layerid="nextLayer.layer"></resource-name>/s</span>
+    <span v-if="layer.isNonVolatile()">+{{formatNumber(layer.getPrestigeAmountPerSecond(), 3, 3)}} <resource-name :layerid="nextLayer.layer"></resource-name>/s</span>
     <span v-else>
-        <span v-if="layer.canPrestige()">Prestige to go <resource-name :layerid="nextLayer.layer"></resource-name><br/>Get +{{formatNumber(layer.getPrestigeAmount(), 2, 0)}} <resource-name :layerid="nextLayer.layer"></resource-name></span>
-        <span v-else>Reach {{formatNumber(layer.getPrestigeLimit(), 2, 0)}} <resource-name :layerid="layer.layer"></resource-name></span>
+        <span v-if="layer.canPrestige()">Prestige to go <resource-name :layerid="nextLayer.layer"></resource-name><br/>Get +{{formatNumber(layer.getPrestigeAmount(), 3, 0)}} <resource-name :layerid="nextLayer.layer"></resource-name></span>
+        <span v-else>Reach {{formatNumber(layer.getPrestigeLimit(), 3, 0)}} <resource-name :layerid="layer.layer"></resource-name></span>
     </span>
 </button>
 <div class="tabs">
@@ -116,8 +116,8 @@ Vue.component("prestige-layer", {
     <upgrade-container :upgrades="layer.upgrades"></upgrade-container>
 </div>
 <div v-if="layer.hasPower() && tab === TAB_POWER">
-    <p class="power-text">You have <span class="big-number">{{formatNumber(layer.power, 2, 2)}}</span> <resource-name :layerid="layer.layer"></resource-name>-Power, 
-    translated to a <span class="big-number">x{{formatNumber(layer.getPowerBoost(), 2, 2)}}</span> Boost on Layer 1 Generators</p>
+    <p class="power-text">You have <span class="big-number">{{formatNumber(layer.power, 3, 3)}}</span> <resource-name :layerid="layer.layer"></resource-name>-Power, 
+    translated to a <span class="big-number">x{{formatNumber(layer.getPowerBoost(), 3, 3)}}</span> Boost on Layer 1 Generators</p>
     <generator-table :generators="layer.powerGenerators"></generator-table>
 </div>
 <div v-if="layer.hasChallenges() && tab === TAB_CHALLENGES">

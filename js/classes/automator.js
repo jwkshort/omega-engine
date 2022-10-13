@@ -12,6 +12,14 @@ class Automator
         this.desiredInterval = 0;
     }
 
+    maxAll()
+    {
+        for(const k of Object.keys(this.upgrade))
+        {
+           this.upgrade[k].buyMax();
+        }
+    }
+
     tick(dt)
     {
         if(this.upgrade.level.gt(0))

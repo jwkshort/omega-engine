@@ -46,7 +46,7 @@ const game = {
         {
             for(let i = 0; i < game.automators.length - 2; i++)
             {
-                game.automators[i].upgrade.buyMax()
+                game.automators[i].upgrade.maxAll()
             }
         }, new DynamicLayerUpgrade(level => level + 7, () => null, () => "Decrease the Automator interval",
             level => Decimal.pow(10, PrestigeLayer.getPrestigeCarryOverForLayer(level.add(10).toNumber()) * 10),
@@ -121,8 +121,10 @@ const game = {
         new Achievement("The True Time", "Go &gamma; 42 Times", "&gamma;", () => (game.layers[2] && game.layers[2].timesReset >= 42)|| game.metaLayer.active),
         new Achievement("More Gamma, more Boost", "Gain 1,000,000 &gamma;", "&gamma;", () => (game.layers[2] && game.layers[2].resource.gte(1e6))|| game.metaLayer.active),
         new Achievement("Huge Number", "Gain 1.00e100,000 &alpha;", "&alpha;", () => (game.layers[1] && game.layers[0].resource.gte("1e100000"))|| game.metaLayer.active),
-        new Achievement("Persistence", "Make Layer &alpha; Non-Volatile", '<img src="images/save.svg" alt="S">', () => (game.volatility.layerVolatility.level.gt(0))|| game.metaLayer.active),
+        new Achievement("How Challenging", "Beat Challenge y-01 at least once", "&gamma;", () => game.layers[2] && game.layers[2].challenges[0].level > 0|| game.metaLayer.active),
+        new Achievement("Persistence", "Make Layer &alpha; Non-Volatile", '<img src="images/save.svg" alt="S">', () => ((game.volatility.layerVolatility.level.gt(0)))|| game.metaLayer.active),
         new Achievement("Other Times Await... Yet Again", "Go &delta;", "&delta;", () => (game.layers[3] && game.layers[3].timesReset > 0)|| game.metaLayer.active),
+        new Achievement("\"Easy wave\"", "Beat Challenge &delta;-04 8 times", "&delta;", () => game.layers[3] && game.layers[3].challenges[3].level > 7|| game.metaLayer.active),
         new Achievement("Aleph-0", "Reach 1,000 &#8501;", '<span class="aleph">&#8501;<sub>0</sub></span>', () => (game.alephLayer.bestaleph.gte(1000))|| game.metaLayer.active),
         new Achievement("Aleph-1", "Reach 1.00e30 &#8501;", '<span class="aleph">&#8501;<sub>1</sub></span>', () => (game.alephLayer.bestaleph.gte(1e30))|| game.metaLayer.active),
         new Achievement("Aleph-2", "Reach &#126;1.80e308 &#8501;", '<span class="aleph">&#8501;<sub>&#8734;</sub></span>', () => (game.alephLayer.bestaleph.gte("1.8e308"))|| game.metaLayer.active),
@@ -130,6 +132,7 @@ const game = {
         new Achievement("Aleph-π", "Have 3.14e1592 aleph", '<span class="aleph">&aleph;<sub>π</sub></span>', () => (game.alephLayer.bestaleph.gte("3.14e1592"))|| game.metaLayer.active),
         new Achievement("It all runs by itself", "Enable the Aleph Automator", "<img src=\"images/hardware-chip.svg\" alt=\"A\">", () => (game.automators.autoAleph.upgrade.level.gte(1))|| game.metaLayer.active),
         new Achievement("How many are there!?", "Go &epsilon;", "&epsilon;", () => (game.layers[4] && game.layers[4].timesReset > 0)|| game.metaLayer.active),
+        new Achievement("\"Easier wave\"", "Beat Challenge &epsilon;-03 13 times", "&epsilon;", () => game.layers[4] && game.layers[4].challenges[2].level > 12|| game.metaLayer.active),
         new Achievement("It's time to stop!", "Go &zeta;", "&zeta;", () => (game.layers[5] && game.layers[5].timesReset > 0)|| game.metaLayer.active),
         new Achievement("End Game?", "Gain 1.00e1,000,000,000 &alpha;", "&alpha;", () => (game.layers[1] && game.layers[0].resource.gte("1e1000000000"))|| game.metaLayer.active),
         new Achievement("Temperature", "Go &theta;", "&theta;", () => (game.layers[7] && game.layers[7].timesReset > 0)|| game.metaLayer.active),
@@ -185,8 +188,13 @@ const game = {
         new Achievement("What a Bonus", "Gain a Bonus of 1e10% from \"Gain a bonus to functions points gain\" Reward: Unlock 2 more Enhancers", '<span class="aleph">&#0131;<sub>×</sub><sup>P</sup></span>', () => game.functionsLayer.upgrades.functionsBonus.apply().gte("1e8")),
         new Achievement("Big Number", "Reach the number 2e1024 Reward: Unlock 2 more Enhancers", '<span class="aleph">&#8734;<sup>&#8734;</sup></span>', () => Decimal.gte(game.functionsLayer.number, "2e1024")),
         new Achievement("ƒ(x) = 6", "Reach 2.00e1024 &#0131;P Reward: A Softcap for &#0131;P's Effect lol", '<span class="aleph">&#0131;<sub>6</sub></span>', () => Decimal.gte(game.functionsLayer.functionsPoints, "2e1024")),
-        new Achievement("Endgame", "Reach layer 1e535 and finish Omega Layers EZ (V1.6)", "Ʊ", () => game.metaLayer.layer.gte("1e535")),
-        new Achievement("True endgame?", "????? ????? ???? ??? ??? ??? ??????? ???? ??????? ?? ??? ?  and truly finish Omega Layers EZ (V1.6)", "?", () => (game.metaLayer.layer.gte("1e535"))&&(game.restackLayer.upgradeTreeNames.mysteriousUpgrade.level.gte(1))),
+        new Achievement("Nice QoL", "Buy the Restack Tree Upgrade in Row 9 Reward: Unlock 4 more Enhancers", "👍", () => (game.restackLayer.upgradeTreeNames.costsNothing.level.gte(1))),
+        new Achievement("Re-Enhance", "Buy Enhancer 11 once", "<img alt=\"LC\" class=\"inline\" src=\"images/layercoin.svg\"/>", () => (game.functionsLayer.upgrades.Enhancefx.level.gte(1))),
+        new Achievement("Passive Income", "Buy Enhancer 12 once Reward: Unlock 4 more Enhancers", "<img alt=\"LC\" class=\"inline\" src=\"images/layercoin.svg\"/>", () => (game.functionsLayer.upgrades.EnhanceVar.level.gte(1))),
+        new Achievement("Scaled Already?", "Increase <b>&eta;</b>'s 25 times except by increasing <b>k</b> Reward: Unlock 4 more Enhancers", "<span style='font-size: 75%;' class=\"aleph\">&eta;<sup>25</sup></span>", () => (game.functionsLayer.upgrades.Variable_eta.level.gte(25))),
+        new Achievement("Inf-Infinity-Infinity", "Reach Layer ~3.23e616 Reward: Unlock 2 more Enhancers", "<span style='font-size: 100%;'>Ʊ<sup>Ʊ</sup></span>", () => game.metaLayer.layer.gte("3.23e616")),
+        new Achievement("Luckier Layers", "Reach Layer 7.777e777", "<span style='font-size: 70%;'>Ʊ<sub>777</sub><sup>Ʊ</sup></span>", () => game.metaLayer.layer.gte("7.777e777")),
+        new Achievement("Endgame", "Reach layer 8.080e808 and finish Omega Layers EZ (V1.7)", "Ʊ", () => game.metaLayer.layer.gte("8.080e808")),
     ],
     secretAchievements: [
         new Achievement("Meta sucks!", "Reach Layer 96 without going meta", "<img alt=\"LC\" class=\"inline\" src=\"images/layercoin.svg\"/>", () => game.highestLayerpremeta >= 95),
