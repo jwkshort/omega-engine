@@ -1,5 +1,5 @@
 const functions = {
-    formatNumber: function(n, prec, prec1000, lim = new Decimal(1000))
+    formatNumber: function(n, prec = 3, prec1000 = 3, lim = new Decimal(1000))
     {
         if(typeof n === "number")
         {
@@ -37,7 +37,13 @@ const functions = {
             }
             return Decimal.pow(10, mag % 1).toFixed(prec) + "e" + Math.floor(mag).toLocaleString("en-us", {minimumFractionDigits:0 , maximumFractionDigits:0});
         }
-        return "e".repeat(n.layer) + n.mag.toLocaleString("en-us", {minimumFractionDigits: prec , maximumFractionDigits: prec});
+        if(n.lte("1eeee1000"))
+        {
+            return "e".repeat(n.layer) + n.mag.toLocaleString("en-us", {minimumFractionDigits: prec , maximumFractionDigits: prec});
+        }
+        var slog = n.slog()
+        if (slog.gte(1e6)) return "F" + functions.formatNumber(slog.floor())
+        else return functions.formatNumber(Decimal.pow(10, slog.sub(slog.floor()))) + "F" + functions.formatNumber(slog.floor(), 0, 0);
     },
     formatTime: function(s)
     {

@@ -316,7 +316,7 @@ class FunctionsLayer
             ),
             EnhanceFP: new FunctionsUpgrade("Boost functions gain based on Bought Functions gain Multiplier levels, Raise Second Enhancer to [Third Number Upgrade's Effect], Boost Functions gain by 1e200 But Nullify Eighth Number Upgrade's Second Effect",
             level => (game.achievements[102].isCompleted) ? [new Decimal ("7.269e7269"), Decimal.dInf][level.toNumber()] : Decimal.dInf,
-            level => Decimal.pow(this.upgrades.functionsGain.level , level.min(1).mul(2)),
+            level => Decimal.pow(this.upgrades.functionsGain.level.max(0).add(2) , level.min(1).mul(2)),
             {
                 maxLevel: new Decimal (1),
                 getEffectDisplay: effectDisplayTemplates.numberStandard(3, "x")}
