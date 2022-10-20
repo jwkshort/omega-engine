@@ -1,6 +1,11 @@
 Vue.component("changelog-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title>v1.7.0.1 - Naming alterations</template>
+    <template v-slot:text>- Updated by Nif<br>- Added bamboo and amethyst to Minecraft notations<br>- Added Neutronium to Elemental notations<br>- I am now Nif
+    </template>
+    </guide-item>
+    <guide-item>
     <template v-slot:title>v1.7 - ENHANCED</template>
     <template v-slot:text>- Add 14 more enhancers<br>- New Themes and Fonts and Layers Names<br>-Changed u91<br>-Expect Some Bugs or Lag<br>- Change Precisions to 3 instead of 2<br> Endgame: Layer 8.080e808<br> - New content coming soon...
     </template>
