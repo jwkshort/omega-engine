@@ -83,30 +83,30 @@ var mod = {
             ["Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot" , "Golf", "Hotel", "India", "Juliett", "Kilo", "Lima", "Mike", "November" , "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor" , "Whiskey", "X-ray", "Yankee", "Zulu"],
             ["?", "!", ".", "-"]
         ]],
-        ["Minecraft (TJC games)",
+        ["Minecraft (Nif)",
         [
-            ["Oak", "Spruce", "Birch", "Jungle", "Acacia", "Dark oak", "Crimson", "Warped", "Mangrove", "Crafting table"],
-            ["Coal", "Copper", "Lapis", "Iron", "Gold", "Redstone", "Emerald", "Diamond", "Quartz", "Netherrite"],
+            ["Oak", "Spruce", "Birch", "Jungle", "Acacia", "Dark oak", "Crimson", "Warped", "Mangrove", "Bamboo", "Crafting table"],
+            ["Coal", "Copper", "Amethyst", "Lapis", "Iron", "Gold", "Redstone", "Emerald", "Diamond", "Quartz", "Netherrite"],
             ["Overworld", "Nether", "End", "Aether"]
         ]
         ],
-        ["Minecraft shorthand (TJC games)",
+        ["Minecraft shorthand (Nif)",
         [
-            ["O", "S", "B", "J", "A", "DO", "C", "W", "M", "CT"],
-            ["Co", "Cu", "L", "I", "G", "R", "E", "D", "Q", "N"],
+            ["O", "S", "B", "J", "A", "DO", "C", "W", "M", "B", "CT"],
+            ["Co", "Cu", "Am", "L", "I", "G", "R", "E", "D", "Q", "N"],
             ["Ov", "Ne", "En", "Ae"]
         ]
         ],
-        ["Elemental (TJC games)",
+        ["Elemental (Nif)",
         [
-            ["Hydrogen", "Helium", "Lithium", "Beryllium", "Boron", "Carbon", "Nitrogen", "Oxygen", "Fluorine", "Neon", "Sodium", "Magnesium", "Aluminium", "Silicon", "Phosphorous", "Sulfur", "Chlorine", "Argon", "Potassium", "Calcium", "Scandium", "Titanium", "Vanadium", "Chromium", "Manganese", "Iron", "Cobalt", "Nickel", "Copper", "Zinc", "Gallium", "Germanium", "Arsenic", "Selenium", "Bromine", "Krypton", "Rubidium", "Strontium", "Yttrium", "Zirconium", "Niobium", "Molybdenium", "Technecium", "Rutherfordium", "Rhodium", "Palladium", "Silver", "Cadmium", "Indium", "Tin", "Antimony", "Tellerium", "Iodine", "Xenon", "Caesium", "Barium", "Lanthanium", "Cerium", "Praseodymium", "Neodymium", "Promethium", "Samarium", "Europeum", "Gadolinium", "Terbium", "Dysprosium", "Holomium", "Erbium", "Thulium", "Ytterbium", "Lutetium", "Hafnium", "Tantalium", "Tungsten", "Rhenium", "Osmium", "Iridium", "Platinum", "Gold", "Mercury", "Thallium", "Lead", "Bismuth", "Polonium", "Astatine", "Radon", "Francium", "Radium", "Actinium", "Thorium", "Proactinium", "Uranium", "Neptunium", "Plutonium", "Americium", "Curium", "Berkelium", "Californium", "Einsteinium", "Fermium", "Mendelevium", "Nobelium", "Lawrencium", "Rutherfordium", "Dubnium", "Seaborgium", "Bohrium", "Hassium", "Meitnerium", "Darmstadtium", "Rogentgenium", "Copernicium", "Nihonium", "Flerovium", "Moscovium", "Livermorium", "Tenessine", "Oganesson"],
+            ["Neutronium", "Hydrogen", "Helium", "Lithium", "Beryllium", "Boron", "Carbon", "Nitrogen", "Oxygen", "Fluorine", "Neon", "Sodium", "Magnesium", "Aluminium", "Silicon", "Phosphorous", "Sulfur", "Chlorine", "Argon", "Potassium", "Calcium", "Scandium", "Titanium", "Vanadium", "Chromium", "Manganese", "Iron", "Cobalt", "Nickel", "Copper", "Zinc", "Gallium", "Germanium", "Arsenic", "Selenium", "Bromine", "Krypton", "Rubidium", "Strontium", "Yttrium", "Zirconium", "Niobium", "Molybdenium", "Technecium", "Rutherfordium", "Rhodium", "Palladium", "Silver", "Cadmium", "Indium", "Tin", "Antimony", "Tellerium", "Iodine", "Xenon", "Caesium", "Barium", "Lanthanium", "Cerium", "Praseodymium", "Neodymium", "Promethium", "Samarium", "Europeum", "Gadolinium", "Terbium", "Dysprosium", "Holomium", "Erbium", "Thulium", "Ytterbium", "Lutetium", "Hafnium", "Tantalium", "Tungsten", "Rhenium", "Osmium", "Iridium", "Platinum", "Gold", "Mercury", "Thallium", "Lead", "Bismuth", "Polonium", "Astatine", "Radon", "Francium", "Radium", "Actinium", "Thorium", "Proactinium", "Uranium", "Neptunium", "Plutonium", "Americium", "Curium", "Berkelium", "Californium", "Einsteinium", "Fermium", "Mendelevium", "Nobelium", "Lawrencium", "Rutherfordium", "Dubnium", "Seaborgium", "Bohrium", "Hassium", "Meitnerium", "Darmstadtium", "Rogentgenium", "Copernicium", "Nihonium", "Flerovium", "Moscovium", "Livermorium", "Tenessine", "Oganesson"],
             ["Up quark", "Down quark", "Charm quark", "Strange quark", "Top quark", "Bottom quark", "Electron", "Muon", "Tau particle", "Electron neutrino", "Muon neutrino", "Tau neutrino", "Gluon", "Photon", "Z boson", "W boson", "Higgs boson"],
             ["Delta 2+", "Delta proton", "Delta neutron", "Delta electron"]
         ]
         ],
-        ["Elemental shorthand (TJC games)",
+        ["Elemental shorthand (Nif)",
         [
-            ["H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "Ar", "Se", "Br", "Kr", "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", "Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg", "Tl", "Pb", "Bi", "Po", "At", "Rn", "Fr", "Ra", "Ac", "Th", "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm", "Md", "No", "Lr", "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og"],
+            ["Nt", "H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "Ar", "Se", "Br", "Kr", "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", "Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg", "Tl", "Pb", "Bi", "Po", "At", "Rn", "Fr", "Ra", "Ac", "Th", "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm", "Md", "No", "Lr", "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og"],
             ["u", "d", "c", "s", "t", "b", "e", "μ", "τ", "Ve", "Vμ", "Vτ", "g", "γ", "Z", "W", "H"],
             ["Δ⁺⁺", "Δ⁺", "Δ⁰", "Δ⁻"]
         ]
