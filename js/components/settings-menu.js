@@ -98,7 +98,8 @@ Vue.component("settings-menu", {
         setNames: js => functions.setNames(js),
         setFont: css => functions.setFont(css),
         setSave: info => functions.setSave(info),
-        volatilityUnlocked: () => functions.maxLayerUnlocked() >= 2
+        volatilityUnlocked: () => functions.maxLayerUnlocked() >= 2,
+        functionsUnlocked: () => game.functionsLayer.isUnlocked()
     },
     template: `<div class="settings">
 <div class="settings-panel-container">
@@ -130,6 +131,7 @@ Vue.component("settings-menu", {
             <label><input type="radio" value="0" v-model.number="settings.titleStyle"/> None</label><br/>
             <label><input type="radio" value="1" v-model.number="settings.titleStyle"/> Motd</label><br/>
             <label><input type="radio" value="2" v-model.number="settings.titleStyle"/> Current Layer</label>
+            <label v-if="functionsUnlocked"><input type="radio" value="3" v-model.number="settings.titleStyle"/> Amount of ƒP</label>
         </fieldset>
     </div>
     <div class="settings-panel">
