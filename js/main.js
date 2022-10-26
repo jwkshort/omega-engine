@@ -49,6 +49,9 @@ function tickGame(seconds)
             titleInfo = "Layer "
             titleInfo += game.metaLayer.active ? functions.formatNumber(game.metaLayer.layer.add(1), 3, 0) : new Decimal(1).add(game.highestLayer);
             break;
+        case 3:
+            titleInfo = functions.formatNumber(game.functionsLayer.functionsPoints, 3, 0)
+            break;
     }
     document.title = "Omega Layers EZ" + (game.settings.titleStyle !== 0 ? ":" : "") + " " + titleInfo;
 
