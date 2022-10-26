@@ -1,6 +1,11 @@
 Vue.component("changelog-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title>v1.7.0.2 - Style up</template>
+    <template v-slot:text>- Updated by jwklong (the omega engine maker)<br>- Changed cover in embed<br>- Added Elements notation (not to be confused with elemental)<br>- Some other things that wont be noticed, but may be used in a future update
+    </template>
+    </guide-item>
+    <guide-item>
     <template v-slot:title>v1.7.0.1 - Naming alterations</template>
     <template v-slot:text>- Updated by Nif<br>- Added bamboo and amethyst to Minecraft notations<br>- Added Neutronium to Elemental notations<br>- I am now Nif
     </template>
