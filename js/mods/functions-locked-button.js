@@ -1,4 +1,4 @@
-Vue.component("aleph-locked-button", {
+Vue.component("functions-locked-button", {
     props: ["functions"],
     methods: {
         totalFunctions: () => game.functionsLayer.functionsPoints,
